@@ -9,8 +9,6 @@ class Builder:public Ship{
         Builder();
         virtual ~Builder();
         virtual Rocket* createShip();
-        virtual Rocket* getRocket();
-        virtual void setRocket(Rocket*);
 };
 
 #endif
