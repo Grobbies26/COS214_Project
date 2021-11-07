@@ -1,9 +1,9 @@
 #ifndef STORESIMMODE_H
 #define STORESIMMODE_H
 
-#include "Mode.h"
+#include "NMode.h"
 
-class StoreSimMode:public Mode{
+class StoreSimMode:public NMode{
     public:
         StoreSimMode();
         virtual ~StoreSimMode();

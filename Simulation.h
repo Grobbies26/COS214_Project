@@ -2,7 +2,6 @@
 #define SIMULATION_H
 
 #include "SimState.h"
-#include "SimStateInfo.h"
 #include "Mode.h"
 #include "Ship.h"
 
@@ -14,8 +13,8 @@ class Simulation{
     public:
         Simulation();
         ~Simulation();
-        SimStateInfo createSimulation();
-        void setSimulation(SimStateInfo*);
+        SimState createSimulation();
+        void setSimulation(SimState*);
         void runSim();
         void setMode(Mode*);
         void setShip(Ship*);

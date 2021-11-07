@@ -1,9 +1,9 @@
 #ifndef BMODE_H
 #define BMODE_H
 
-#include "Mode.h"
+#include "NMode.h"
 
-class BMode:public Mode{
+class BMode:public NMode{
     public:
         BMode();
         virtual ~BMode();

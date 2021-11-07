@@ -10,8 +10,8 @@ class Ship{
         Ship();
         virtual ~Ship();
         virtual Rocket* createShip()=0;
-        virtual Rocket* getRocket()=0;
-        virtual void setRocket(Rocket*)=0;
+        virtual Rocket* getRocket();
+        virtual void setRocket(Rocket*);
 };
 
 #endif

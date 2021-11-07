@@ -4,9 +4,12 @@
 #include "Node.h"
 
 class SatelliteIterator{
+    private:
+        Node* first;
+        Node* current;
     public:
-        SatelliteIterator();
-        virtual ~SatelliteIterator();
+        SatelliteIterator(Node*);
+        ~SatelliteIterator();
         Node* currentSatellite();
         Node* nextSatellite();
         Node* firstSatellite();
