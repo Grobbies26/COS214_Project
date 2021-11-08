@@ -1,13 +1,17 @@
 #include "Simulation.h"
-#include "Mode.h"
-#include "SimState.h"
 
-Simulation::Simulation(){
-    state = nullptr;
+#include <iostream>
+
+using namespace std;
+
+Simulation :: Simulation()
+{
+
     strategy = nullptr;
     ship = nullptr;
+     state = new SimStateInfo();
 }
-
+    
 Simulation::~Simulation(){
     if (state != nullptr){
         delete state;
@@ -19,14 +23,21 @@ Simulation::~Simulation(){
         delete ship;
     }
 }
+   
 
-SimState Simulation::createSimulation(){
-    //Temp stub
-    return nullptr;
+void Simulation :: runSim()
+{
+  
+}    
+ 
+SimBackup* Simulation :: createSimulation()
+{
+    return new SimBackup();
 }
 
-void Simulation::runSim(){
-    //Temp stub
+void Simulation :: setSimulation(SimBackup* mem)
+{
+        
 }
 
 void Simulation::setMode(Mode* mode){
@@ -35,8 +46,4 @@ void Simulation::setMode(Mode* mode){
 
 void Simulation::setShip(Ship* ship){
     this->ship = ship;
-}
-
-void Simulation::setSimulation(SimState* sim){
-    state = sim;
 }
