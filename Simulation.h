@@ -1,23 +1,30 @@
 #ifndef SIMULATION_H
 #define SIMULATION_H
 
-#include "SimState.h"
-#include "Mode.h"
-#include "Ship.h"
+ #include "Mode.h"
+ #include "Ship.h"
+#include "SimStateInfo.h"
+#include "SimBackup.h"
 
 class Simulation{
     private:
-        SimState* state;
+         SimStateInfo* state;
         Mode* strategy;
         Ship* ship;
+    
     public:
         Simulation();
         ~Simulation();
-        SimState createSimulation();
-        void setSimulation(SimState*);
+        SimBackup* createSimulation();
+        void setSimulation(SimBackup*);
         void runSim();
+
         void setMode(Mode*);
         void setShip(Ship*);
+
+       
 };
 
 #endif
+
+
