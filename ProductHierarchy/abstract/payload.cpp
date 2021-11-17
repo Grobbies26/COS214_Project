@@ -1,6 +1,14 @@
 #ifndef PAYLOAD_CPP
 #define PAYLOAD_CPP
 
-// TO DO
+#include "payload.h"
+
+Payload::Payload(string s):Rocket(s){
+    
+}
+
+Payload::~Payload(){
+    
+}
 
 #endif

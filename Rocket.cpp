@@ -3,22 +3,58 @@
 
 using namespace std;
 
-Rocket::Rocket()
+Rocket::Rocket(string p)
 {
-
+    successor = nullptr;
+    payloadType = p;
 }
 
-~Rocket()
+Rocket::~Rocket()
+{
+    
+}
+
+void Rocket::change()
 {
     
 }
 
 State *getState()
 {
-    return state;
+    return this->state;
 }
 
 void setState(State *s)
 {
-    state = s;
+    this->state = s;
+}
+
+void Rocket::handleRequest(string s){
+    if(getSuccessor()==nullptr){
+        cout << "Request could not be handled." << endl;
+    }
+    else{
+        getSuccessor()->handleRequest(s);
+    }
+}
+
+void Rocket::add(Rocket* rckt){
+    if(successor == nullptr){
+        successor = rckt;
+    }
+    else{
+        successor->add(rckt);
+    }
+}
+
+Rocket* Rocket::getSuccessor(){
+    return successor;
+}
+
+void Rocket::setSuccessor(Rocket* r){
+    successor = r;
+}
+
+string Rocket::getPayloadType(){
+    return payloadType;
 }
