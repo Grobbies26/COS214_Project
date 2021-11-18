@@ -1,7 +1,7 @@
 #include "NMode.h"
 
-NMode::NMode(){
-
+NMode::NMode(bool b){
+    batch = b;
 }
 
 NMode::~NMode(){

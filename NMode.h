@@ -4,8 +4,11 @@
 #include "Mode.h"
 
 class NMode:public Mode{
+    private:
+        bool batch;
+        bool store;
     public:
-        NMode();
+        NMode(bool);    
         virtual ~NMode();
         virtual void run();
 };

@@ -16,6 +16,6 @@ Rocket* Ship::getRocket(){
     return rocket;
 }
 
-Ship::setRocket(Rocket* roc){
+void Ship::setRocket(Rocket* roc){
     rocket = roc;
 }

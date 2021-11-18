@@ -1,4 +1,5 @@
 #include "Simulation.h"
+#include "SimBackup.h"
 
 #include <iostream>
 
@@ -9,7 +10,7 @@ Simulation :: Simulation()
 
     strategy = nullptr;
     ship = nullptr;
-     state = new SimStateInfo();
+    state = new SimBackup();
 }
     
 Simulation::~Simulation(){
@@ -26,16 +27,16 @@ Simulation::~Simulation(){
    
 
 void Simulation :: runSim()
-{
-  
-}    
+{   
+    strategy->run();   
+}   
  
 SimBackup* Simulation :: createSimulation()
 {
     return new SimBackup();
 }
 
-void Simulation :: setSimulation(SimBackup* mem)
+void Simulation :: setBackup(SimBackup* mem)
 {
         
 }
@@ -47,3 +48,6 @@ void Simulation::setMode(Mode* mode){
 void Simulation::setShip(Ship* ship){
     this->ship = ship;
 }
+
+
+

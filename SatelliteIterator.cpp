@@ -28,6 +28,6 @@ Node* SatelliteIterator::currentSatellite(){
 }
 
 Node* SatelliteIterator::nextSatellite(){
-    current = current->next;
+    current = current->getNext();
     return current;
 }

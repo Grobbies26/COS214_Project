@@ -3,7 +3,7 @@
 
 #include "NMode.h"
 
-class BMode:public NMode{
+class BMode:public Mode{
     public:
         BMode();
         virtual ~BMode();

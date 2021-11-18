@@ -7,21 +7,13 @@
 class Node : public Stars
 {
     private:
-
-    Node* next;
+        Node* next;
    
-
     public:
-
-    Node();
-    ~Node();
-
-    void operation();
-
-  
-
-
-
+        Node();
+        ~Node();
+        Node* getNext();
+        void operation();
 
 };
 

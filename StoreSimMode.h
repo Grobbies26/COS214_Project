@@ -3,7 +3,7 @@
 
 #include "NMode.h"
 
-class StoreSimMode:public NMode{
+class StoreSimMode:public Mode{
     public:
         StoreSimMode();
         virtual ~StoreSimMode();

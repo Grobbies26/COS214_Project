@@ -7,9 +7,7 @@ Builder::Builder():Ship(){
 }
 
 Builder::~Builder(){
-    if (rocket != nullptr){
-        delete rocket;
-    }
+   
 }
 
 Rocket* Builder::createShip(){
