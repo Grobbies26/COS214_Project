@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Falcon9DragonSC.h"
+#include "DragonSC.h"
+#include "Falcon9.h"
 
 using namespace std;
 

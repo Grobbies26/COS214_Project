@@ -9,6 +9,9 @@ class Falcon9 : public Rocket {
     private:
         Falcon9Core* core;
         MerlinEngine** engines;
+    public:
+        Falcon9();
+        ~Falcon9();
 };
 
 #endif

@@ -9,7 +9,7 @@ class Ship{
     public:
         Ship();
         virtual ~Ship();
-        virtual Rocket* createShip()=0;
+        virtual Rocket* createShip(bool,int)=0;
         virtual Rocket* getRocket();
         virtual void setRocket(Rocket*);
 };

@@ -13,6 +13,8 @@ int main(Simulation*){
     setUpStrategy(simulation);
     setUpShip(simulation);
 
+    //save sim backup always
+
     simulation->runSim();
 
     delete simulation;
@@ -37,23 +39,6 @@ void setUpStrategy(Simulation* sim){
         }
     }
 
-    valid = false;
-    while(valid == false && m != 1){
-        cout<<"Would you like to store the simualtion: "<<endl;
-        cout<<"Enter Y,N: ";
-        string a = "";
-        cin >> a;
-        if(a == "Y"){
-            valid = true;
-        } 
-        else if(a == "N"){
-            valid = true;
-        }
-        else{
-            cout<< endl << "Invalid input." << endl;
-        }
-    }
-
     switch (m)
     {
     case 1:
@@ -66,15 +51,66 @@ void setUpStrategy(Simulation* sim){
     case 3:
         sim->setMode(new NMode(true));
         break;
-    default:
-        break;
     }
 
     return;
 }
 
 void setUpShip(Simulation* sim){
-    Builder* rocket = new Builder();
+    Ship* ship = new Builder();
 
-    
+    bool valid = false;
+    bool heavy = false;
+    int m;
+
+    while (valid == false)
+    {
+        cout<<"Please select the payload type: \n\t1: Starlink \n\t2: Crew Dragon \n\t3: Dragon Space Craft"<<endl;
+        cout<<"Enter 1,2,3: ";
+        
+        cin >> m;
+        if(m < 4 && m > 0){
+            valid = true;
+        } 
+        else{
+            cout<< endl << "Invalid input." << endl;
+        }
+    }
+
+    valid = false;
+    while (valid == false && m != 1)
+    {
+        cout<<"Please select the rocket type: \n\t1: Heavy Falcon \n\t2: Falcon 9 "<<endl;
+        cout<<"Enter 1,2: ";
+        
+        cin >> m;
+        if(m == 1){
+            heavy == true;
+            valid = true;
+        } 
+        else if(m == 2){
+            heavy == false;
+            valid == true;
+        }
+        else{
+            cout<< endl << "Invalid input." << endl;
+        }
+    }
+
+    switch (m)
+    {
+    case 1:
+        ship->setRocket(ship->createShip(heavy,m));
+        break;
+    case 2:
+        ship->setRocket(ship->createShip(heavy,m));
+        break;
+    case 3:
+        ship->setRocket(ship->createShip(heavy,m));
+        break;
+    }
+
+    sim->setShip(ship);
+
+    return;
 }

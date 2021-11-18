@@ -1,5 +1,7 @@
 #include <iostream>
 #include "Falcon9Starlink.h"
+#include "Falcon9.h"
+#include "Starlink.h"
 
 using namespace std;
 
