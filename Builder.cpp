@@ -47,5 +47,11 @@ Rocket* Builder::createShip(bool heavy,int pay){
         }
     }
 
-    
+    rocket = RF->createRocket();
+    payload = RF->createPayload();
+
+    setRocket(rocket);
+    setPayload(payload);
+
+    delete RF;
 }

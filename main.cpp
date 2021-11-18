@@ -8,7 +8,7 @@
 void setUpStrategy(Simulation*);
 void setUpShip();
 
-int main(Simulation*){
+int main(){
     Simulation* simulation = new Simulation();
     setUpStrategy(simulation);
     setUpShip(simulation);

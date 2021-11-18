@@ -2,13 +2,15 @@
 #include "Rocket.h"
 
 Ship::Ship(){
+    ship = nullptr;
     rocket = nullptr;
+    payload = nullptr;
 }
 
 Ship::~Ship(){
-    if (rocket != nullptr){
-        delete rocket;
-        rocket = nullptr;
+    if (ship != nullptr){
+        delete ship;
+        ship = nullptr;
     }
 }
 
@@ -18,4 +20,20 @@ Rocket* Ship::getRocket(){
 
 void Ship::setRocket(Rocket* roc){
     rocket = roc;
+}
+
+Rocket* Ship::getPayload(){
+    return payload;
+}
+
+void Ship::setPayload(Rocket* roc){
+    payload = roc;
+}
+
+Rocket* Ship::getShip(){
+    return ship;
+}
+
+void Ship::setShip(Rocket* roc){
+    ship = roc;
 }

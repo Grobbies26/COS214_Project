@@ -26,8 +26,7 @@ Simulation::~Simulation(){
 }
    
 
-void Simulation :: runSim()
-{   
+void Simulation :: runSim(){   
     strategy->run();   
 }   
  
