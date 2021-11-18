@@ -1,7 +1,7 @@
 #ifndef MERLINE_ENGINE_CPP
 #define MERLINE_ENGINE_CPP
 
-#include "merlinengine.h"
+#include "Merlinengine.h"
 
 MerlinEngine::MerlinEngine( MerlinEngine* mEngine ){
     // TO DO

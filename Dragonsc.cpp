@@ -1,11 +1,9 @@
 #ifndef DRAGON_SC_CPP
 #define DRAGON_SC_CPP
 
-#include "dragonsc.h"
+#include "Dragonsc.h"
 
-DragonSC::DragonSC():Payload(){
-
-}
+DragonSC::DragonSC(): Payload( "DragonSC" ){}
 
 void DragonSC::handleRequest(Rocket* r){
     if(r->getPayloadType() == "DragonSC"){

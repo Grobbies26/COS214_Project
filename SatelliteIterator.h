@@ -13,7 +13,7 @@ class SatelliteIterator{
         Node* currentSatellite();
         Node* nextSatellite();
         Node* firstSatellite();
-        boolean isFirst();
+        bool isFirst();
 };
 
 #endif

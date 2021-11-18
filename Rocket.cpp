@@ -19,22 +19,22 @@ void Rocket::change()
     
 }
 
-State *getState()
+State* Rocket::getState()
 {
     return this->state;
 }
 
-void setState(State *s)
+void Rocket::setState(State *s)
 {
     this->state = s;
 }
 
-void Rocket::handleRequest(string s){
-    if(getSuccessor()==nullptr){
+void Rocket::handleRequest(Rocket* r){
+    if(r->getSuccessor()==nullptr){
         cout << "Request could not be handled." << endl;
     }
     else{
-        getSuccessor()->handleRequest(s);
+        getSuccessor()->handleRequest(r);
     }
 }
 

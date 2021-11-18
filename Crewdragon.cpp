@@ -1,11 +1,9 @@
 #ifndef CREW_DRAGON_CPP
 #define CREW_DRAGON_CPP
 
-#include "crewdragon.h"
+#include "Crewdragon.h"
 
-CrewDragon::CrewDragon():Payload(){
-
-}
+CrewDragon::CrewDragon(): Payload( "CrewDragon" ){}
 
 void CrewDragon::handleRequest(Rocket* r){
     if(r->getPayloadType() == "CrewDragon"){

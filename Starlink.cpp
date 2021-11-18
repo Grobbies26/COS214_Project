@@ -1,12 +1,12 @@
 #include <iostream>
 #include <vector>
 #include "Starlink.h"
-#include "../abstract/payload.h"
+#include "Payload.h"
 #include "Rocket.h"
 
 using namespace std;
 
-Starlink::Starlink():Payload(){
+Starlink::Starlink():Payload( "Starlink" ){
     
 }
 

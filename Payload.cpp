@@ -1,14 +1,12 @@
 #ifndef PAYLOAD_CPP
 #define PAYLOAD_CPP
 
-#include "payload.h"
+#include "Payload.h"
 
-Payload::Payload(string s):Rocket(s){
-    
-}
+Payload::Payload(string s):Rocket(s){}
 
 Payload::~Payload(){
-    
+    rocket = 0;
 }
 
 #endif

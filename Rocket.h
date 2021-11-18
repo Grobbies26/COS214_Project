@@ -1,9 +1,8 @@
 #ifndef ROCKET_H
 #define ROCKET_H
 
+#include "Singlevacuummerlin.h"
 #include <iostream>
-#include "State.h"
-#include "../concrete/singlevacuummerlin.h"
 #include <string>
 
 using namespace std;

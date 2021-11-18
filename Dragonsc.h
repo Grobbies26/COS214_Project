@@ -1,7 +1,7 @@
 #ifndef DRAGON_SC_H
 #define DRAGON_SC_H
 
-#include "../abstract/payload.h"
+#include "Payload.h"
 #include "Rocket.h"
 
 class DragonSC : public Payload {

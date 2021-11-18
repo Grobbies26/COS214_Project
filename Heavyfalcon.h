@@ -1,9 +1,9 @@
 #ifndef HEAVY_FALCON_H
 #define HEAVY_FALCON_H
 
-#include "../abstract/rocket.h"
-#include "falcon9core.h"
-#include "merlinengine.h"
+#include "Rocket.h"
+#include "Falcon9core.h"
+#include "Merlinengine.h"
 
 class HeavyFalcon : public Rocket {
     private:

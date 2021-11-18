@@ -10,7 +10,7 @@ SatelliteIterator::~SatelliteIterator(){
 
 }
 
-boolean SatelliteIterator::isFirst(){
+bool SatelliteIterator::isFirst(){
     if (current == first){
         return true;
     }
