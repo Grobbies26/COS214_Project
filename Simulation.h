@@ -9,7 +9,7 @@ class Simulation{
     public:
         Simulation();
         ~Simulation();
-        SimBackup* createSimBackup();
+        SimBackup* createSimBackup(Mode*,Ship*,bool);
         void setBackup(SimBackup*);
         void runSim();
         

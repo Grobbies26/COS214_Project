@@ -12,7 +12,7 @@ NMode::~NMode(){
     
 }
 
-void NMode::run(Rocket* rocket){
+void NMode::run(Rocket* rocket,SimBackup* back){
     Rocket* chain = new Starlink();
     chain->add(new CrewDragon());
     chain->add(new DragonSC());

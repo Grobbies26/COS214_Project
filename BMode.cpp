@@ -14,7 +14,7 @@ BMode::~BMode(){
     
 }
 
-void BMode::run(Rocket* rocket){
+void BMode::run(Rocket* rocket,SimBackup* back){
     bool valid = false;
     int m = 1;
     while (valid == false){

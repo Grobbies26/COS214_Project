@@ -12,7 +12,7 @@ TMode::~TMode(){
     
 }
 
-void TMode::run(Rocket* rocket){
+void TMode::run(Rocket* rocket,SimBackup* back){
     Rocket* chain = new Starlink();
     chain->add(new CrewDragon());
     chain->add(new DragonSC());

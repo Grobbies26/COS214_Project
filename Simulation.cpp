@@ -37,17 +37,17 @@ void Simulation :: runSim(){
 
     state = createSimBackup(strategy,ship,tmode);
 
-    strategy->run(ship->getShip());   
+    strategy->run(ship->getShip(),state);   
 }   
  
-SimBackup* Simulation :: createSimBackup()
+SimBackup* Simulation :: createSimBackup(Mode* m,Ship* s,bool b)
 {
-    return new SimBackup();
+    return new SimBackup(m,s,b);
 }
 
 void Simulation :: setBackup(SimBackup* mem)
 {
-        
+    state = mem;       
 }
 
 void Simulation::setMode(Mode* mode){
