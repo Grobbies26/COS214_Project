@@ -34,7 +34,7 @@ void Simulation :: runSim(){
 
     //state = createSimBackup();
 
-    strategy->run();   
+    strategy->run(ship->getShip());   
 }   
  
 SimBackup* Simulation :: createSimBackup()

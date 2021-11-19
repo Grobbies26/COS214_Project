@@ -1,8 +1,12 @@
 #include "BMode.h"
+#include "Rocket.h"
+#include "Starlink.h"
+#include "Dragonsc.h"
+#include "Crewdragon.h"
 
 #include <iostream>
 
-BMode::BMode(){
+BMode::BMode(Rocket* roc):Mode(roc){
 
 }
 
@@ -10,7 +14,7 @@ BMode::~BMode(){
     
 }
 
-void BMode::run(){
+void BMode::run(Rocket* rocket){
     bool valid = false;
     int m = 1;
     while (valid == false){
@@ -19,9 +23,18 @@ void BMode::run(){
         if(m > 1){
             valid == true;
         }
+        else{
+            cout<< endl << "Invalid input." << endl;
+        }
     }
 
+    Rocket* chain = new Starlink();
+    chain->add(new CrewDragon());
+    chain->add(new DragonSC());
+
     for(int i = 0; i < m; i++){
-        //rocket relevant work done here
+        chain->handleRequest(rocket);
     }
+
+    delete chain;
 }

@@ -6,11 +6,10 @@
 class NMode:public Mode{
     private:
         bool batch;
-        bool store;
     public:
-        NMode(bool);    
+        NMode(bool,Rocket*);    
         virtual ~NMode();
-        virtual void run();
+        virtual void run(Rocket*);
 };
 
 #endif

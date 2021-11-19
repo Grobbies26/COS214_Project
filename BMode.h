@@ -2,12 +2,13 @@
 #define BMODE_H
 
 #include "NMode.h"
+#include "Rocket.h"
 
 class BMode:public Mode{
     public:
-        BMode();
+        BMode(Rocket*);
         virtual ~BMode();
-        virtual void run();
+        virtual void run(Rocket*);
 };
 
 #endif
