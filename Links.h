@@ -2,27 +2,31 @@
 #define LINKS_H
 
 #include "Stars.h"
-
-#include <list>
-#include <vector>
+#include "SatelliteIterator.h"
 
 using namespace std;
 
 class Links : public Stars
 {
     private:
-    list <Stars*> myList;
+    Stars* head;
 
     public:
-
+    Links();
     ~Links();
 
     void add (Stars*);
     void remove();
 
+    void setNext(Stars* s){}
+    
+    Stars* getNext(){
+        return nullptr;
+    }
+
    // Stars* getchild();
 
-    //ADD an iterator here
+    SatelliteIterator* createIterator(Stars*);
 
 
 

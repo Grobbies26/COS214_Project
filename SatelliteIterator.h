@@ -1,19 +1,19 @@
 #ifndef SATELLITEITERATOR_H
 #define SATELLITEITERATOR_H
 
-#include "Node.h"
+#include "Stars.h"
 
 class SatelliteIterator{
     private:
-        Node* first;
-        Node* current;
+        Stars* first;
+        Stars* current;
     public:
-        SatelliteIterator(Node*);
+        SatelliteIterator(Stars*);
         ~SatelliteIterator();
-        Node* currentSatellite();
-        Node* nextSatellite();
-        Node* firstSatellite();
-        bool isFirst();
+        Stars* currentSatellite();
+        Stars* nextSatellite();
+        Stars* firstSatellite();
+        boolean hasNext();
 };
 
 #endif
