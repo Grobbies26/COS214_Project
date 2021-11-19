@@ -27,6 +27,10 @@ Simulation::~Simulation(){
    
 
 void Simulation :: runSim(){   
+    //test fire rocket
+    
+    ship->attachPayload();
+
     strategy->run();   
 }   
  

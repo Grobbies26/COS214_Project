@@ -9,6 +9,7 @@ class Payload : public Rocket {
     public:
         Payload(string);
         virtual ~Payload();
+        virtual void attach(Rocket*);
 };
 
 #endif

@@ -18,6 +18,7 @@ class Ship{
         virtual void setRocket(Rocket*);
         virtual void setPayload(Rocket*);
         virtual void setShip(Rocket*);
+        virtual void attachPayload();
 };
 
 #endif

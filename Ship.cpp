@@ -37,3 +37,10 @@ Rocket* Ship::getShip(){
 void Ship::setShip(Rocket* roc){
     ship = roc;
 }
+
+void Ship::attachPayload(){
+    payload->attach(rocket);
+    ship = payload;
+    payload = nullptr;
+    rocket = nullptr;
+}
