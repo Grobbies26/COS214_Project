@@ -6,7 +6,7 @@
 #include <iostream>
 
 void setUpStrategy(Simulation*);
-void setUpShip();
+void setUpShip(Simulation*);
 
 int main(){
     Simulation* simulation = new Simulation();

@@ -14,7 +14,7 @@ class Simulation{
     public:
         Simulation();
         ~Simulation();
-        SimBackup* createSimulation();
+        SimBackup* createSimBackup();
         void setBackup(SimBackup*);
         void runSim();
         

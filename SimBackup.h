@@ -5,13 +5,11 @@
 
 class SimBackup
 {
-
         private:    
         string success;
         string payload;
      
         SimStateInfo* state;
-
 
     public:
         SimBackup();

@@ -34,7 +34,7 @@ void Simulation :: runSim(){
     strategy->run();   
 }   
  
-SimBackup* Simulation :: createSimulation()
+SimBackup* Simulation :: createSimBackup()
 {
     return new SimBackup();
 }
