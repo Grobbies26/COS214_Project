@@ -19,12 +19,11 @@ class Links : public Stars
     void remove();
 
     void setNext(Stars* s){}
+    Stars* getHead();
     
     Stars* getNext(){
         return nullptr;
     }
-
-   // Stars* getchild();
 
     SatelliteIterator* createIterator(Stars*);
 

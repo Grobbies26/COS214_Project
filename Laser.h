@@ -2,16 +2,20 @@
 #define LASER_H
 
 #include <iostream>
-#include "Node.h"
+#include "Links.h"
+#include "SatelliteIterator.h"
+#include "Stars.h"
 
 using namespace std;
 
 class Laser
 {
 private:
-    Node* starlinkList;
+    Links* nodeList;
 public:
-    void notify(Starlink*);
+    Laser(Links*);
+    ~Laser(){}
+    void notify(string);
 };
 
 

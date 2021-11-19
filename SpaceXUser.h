@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include "SpaceXObserver.h"
-#include "Starlink.h"
+#include "Stars.h"
 
 using namespace std;
 
@@ -11,9 +11,9 @@ class SpaceXUser : public SpaceXObserver
 {
 private:
     string name;
-    Starlink* starlink;
+    Stars* star;
 public:
-    SpaceXUser(string, Starlink*);
+    SpaceXUser(string, Stars*);
     void update();
 };
 

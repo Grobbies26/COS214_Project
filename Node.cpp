@@ -1,6 +1,9 @@
 #include "Node.h"
+#include <iostream>
 
-Node::Node(){}
+Node::Node(){
+    status = "operational";  // states are operational, unstable, critical
+}
 
 Node::~Node(){}
 
@@ -45,6 +48,11 @@ void Node::setState(string s){
 }
 
 
-void Node::statusChanged(){
+void Node::statusChanged(Laser* l){
+    laser = l;
+    laser->notify(this->getState());
+}
 
+void Node::LaserCommunication(string nodeStatus){
+    cout<<"A node in the system has changed it's status to " << nodeStatus << ", notifying all other Starlink nodes in the system."<<endl;
 }

@@ -2,17 +2,17 @@
 #include "SpaceXUser.h"
 using namespace std;
 
-SpaceXUser::SpaceXUser(string n, Starlink* s){
+SpaceXUser::SpaceXUser(string n, Stars* s){
     name = n;
-    starlink = s;
+    star = s;
 }
 
 void SpaceXUser::update(){
-    if (starlink->getState() == "operational")
+    if (star->getState() == "operational")
     {
-         cout<< name << " reacts with speed and returns the Starlink back to an operational state." <<endl;
+         cout<< name << " reacts with speed and returns the Starlink node back to an operational state." <<endl;
     }else{
-         cout<< name << " notices that a Starlink's state has changed to "<< starlink->getState()<<" and starts to work towards making the Starlink operational again." <<endl;
+         cout<< name << " notices that a Starlink node satelite's state has changed to "<< star->getState()<<" and starts to work towards making the Starlink operational again." <<endl;
     }
     
    

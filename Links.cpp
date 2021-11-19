@@ -55,6 +55,10 @@ void Links ::remove()
    delete it;
 }
 
+Stars* Links ::getHead(){
+    return head;
+}
+
 Links :: ~Links()
 {
     SatelliteIterator* it = createIterator(head);
