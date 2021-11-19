@@ -17,7 +17,7 @@ Builder::~Builder(){
    
 }
 
-Rocket* Builder::createShip(bool heavy,int pay){
+void Builder::createShip(bool heavy,int pay){
     Rocket* rocket;
     Rocket* payload;
     RocketFactory* RF;

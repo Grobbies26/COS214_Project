@@ -1,7 +1,7 @@
 #include "SatelliteIterator.h"
 #include "Node.h"
 
-SatelliteIterator::SatelliteIterator(Node* head){
+SatelliteIterator::SatelliteIterator(Stars* head){
     first = head;
     current = first;
 }
@@ -10,8 +10,8 @@ SatelliteIterator::~SatelliteIterator(){
 
 }
 
-bool SatelliteIterator::isFirst(){
-    if (current == first){
+boolean SatelliteIterator::hasNext(){
+    if (current->getNext()){
         return true;
     }
     else{
@@ -19,15 +19,15 @@ bool SatelliteIterator::isFirst(){
     }
 }
 
-Node* SatelliteIterator::firstSatellite(){
+Stars* SatelliteIterator::firstSatellite(){
     return first;
 }
 
-Node* SatelliteIterator::currentSatellite(){
+Stars* SatelliteIterator::currentSatellite(){
     return current;
 }
 
-Node* SatelliteIterator::nextSatellite(){
-    current = current->getNext();
+Stars* SatelliteIterator::nextSatellite(){
+    current = current->next;
     return current;
 }

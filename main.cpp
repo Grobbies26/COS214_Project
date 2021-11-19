@@ -6,7 +6,7 @@
 #include <iostream>
 
 void setUpStrategy(Simulation*);
-void setUpShip();
+void setUpShip(Simulation*);
 
 int main(){
     Simulation* simulation = new Simulation();
@@ -43,6 +43,7 @@ void setUpStrategy(Simulation* sim){
     {
     case 1:
         sim->setMode(new TMode());
+        sim->isTMode();
         break;
     case 2:
         
@@ -97,18 +98,7 @@ void setUpShip(Simulation* sim){
         }
     }
 
-    switch (m)
-    {
-    case 1:
-        ship->setRocket(ship->createShip(heavy,m));
-        break;
-    case 2:
-        ship->setRocket(ship->createShip(heavy,m));
-        break;
-    case 3:
-        ship->setRocket(ship->createShip(heavy,m));
-        break;
-    }
+    ship->createShip(heavy,m);
 
     sim->setShip(ship);
 

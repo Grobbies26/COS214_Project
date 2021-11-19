@@ -3,17 +3,29 @@
 
 #include "Stars.h"
 #include <list>
+#include "SpaceXObserver.h"
 
 class Node : public Stars
 {
     private:
-        Node* next;
-   
+    Node* next;
+    string status;
+    vector<SpaceXObserver*> SXUserlist;
     public:
-        Node();
-        ~Node();
-        Node* getNext();
-        void operation();
+
+    Node();
+    ~Node();
+
+    void setNext(Stars*);
+    Stars* getNext();
+
+    void attachUser(SpaceXObserver*);
+    void detachUser(SpaceXObserver*);
+    string getState();
+    void sendRadioSignal();
+    
+    void setState(string);
+    void statusChanged();
 
 };
 

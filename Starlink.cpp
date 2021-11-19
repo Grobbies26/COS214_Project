@@ -1,38 +1,13 @@
 #include <iostream>
 #include <vector>
 #include "Starlink.h"
-#include "Payload.h"
+#include "../abstract/payload.h"
 #include "Rocket.h"
 
 using namespace std;
 
-Starlink::Starlink():Payload( "Starlink" ){
+Starlink::Starlink():Payload(){
     
-}
-
-void Starlink::attachUser(SpaceXUser* sxu){
-
-}
-
-void Starlink::detachUser(SpaceXUser* sxu){
-
-}
-
-string Starlink::getState(){
-    return status;
-}
-
-void Starlink::sendRadioSignal(){
-
-}
-
-void Starlink::setState(string s){
-    status = s;
-}
-
-
-void Starlink::statusChanged(){
-
 }
 
 void Starlink::handleRequest(Rocket* r){

@@ -27,5 +27,6 @@ public:
     Rocket *getSuccessor();
     void setSuccessor(Rocket *);
     string getPayloadType();
+    virtual void attach(Rocket*)=0;
 };
 #endif

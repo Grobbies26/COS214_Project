@@ -1,23 +1,76 @@
 #include "Links.h"
 
+void Links:: Links(){
+    head = nullptr;
+}
+
 void Links ::add(Stars* s)
 {
 
-    myList.push_back(s);
+    SatelliteIterator* it = createIterator(head);
+    Stars* curr = it->firstSatellite();
+
+   if (curr == nullptr){
+       head = s;
+       head->setNext(nullptr);
+       
+   }else{
+      
+       while (it->hasNext())
+       {
+           curr = it->nextSatellite();
+       }
+
+      curr->setNext(s);
+      curr = curr->getNext();
+      curr->setNext(nullptr);
+   }
+
+   delete it;
 }
 
 void Links ::remove()
 {
+    SatelliteIterator* it = createIterator(head);
+    Stars* curr = it->firstSatellite();
+    Stars* prev = it->firstSatellite();
 
-    myList.pop_back();
+   if (!curr->getNext()){
+       delete head;
+       head = nullptr;
+
+   }else{
+       while (it->hasNext())
+       {
+           prev = curr;
+           curr = it->nextSatellite();
+
+       }
+
+        delete curr;
+        curr = nullptr;
+        prev->setNext(nullptr);
+
+   }
+   delete it;
 }
 
 Links :: ~Links()
 {
+    SatelliteIterator* it = createIterator(head);
+    Stars* curr = it->firstSatellite();
 
-       
-        for (list<Stars*>::iterator it = myList.begin();it != myList.end();++it)
-            delete *it;
-    
+    while (it->hasNext())
+    {
+        prev = curr;
+        curr = it->nextSatellite();
 
+        delete prev;
+    }
+
+    delete curr;
+}
+
+SatelliteIterator* Links ::createIterator(Stars* n){
+    return new SatelliteIterator(n);
 }

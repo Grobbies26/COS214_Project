@@ -10,16 +10,17 @@ class Simulation{
         SimBackup* state;
         Mode* strategy;
         Ship* ship;
-    
+        bool tmode;
     public:
         Simulation();
         ~Simulation();
-        SimBackup* createSimulation();
+        SimBackup* createSimBackup();
         void setBackup(SimBackup*);
         void runSim();
         
         void setMode(Mode*);
         void setShip(Ship*);
+        void isTMode();
 
 };
 
