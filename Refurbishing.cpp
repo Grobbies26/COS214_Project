@@ -3,12 +3,17 @@
 
 using namespace std;
 
-void Refurbishing::update(Rocket *r)
+Refurbishing::Refurbishing()
 {
-
+    state = "Refurbishing";
 }
 
-string Refurbishing::getState()
+void Refurbishing::handle()
 {
-    
+    cout << "The rocket has been used and is now getting refurbished" << endl;
+}
+
+State *Refurbishing::update()
+{
+    return new ReadyToTest();
 }

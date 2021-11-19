@@ -7,16 +7,6 @@ using namespace std;
 
 class SimStateInfo
 {
-
-        private:
-        bool modeChanged;
-        bool shipChanged;
-        bool tModeChanged;
-
-     
-       
-
-
     public:
         SimStateInfo();
         SimStateInfo(const SimStateInfo& s);   // copy constructor
@@ -26,6 +16,9 @@ class SimStateInfo
         void setTModeChanged();
   
         void showState();
-
+    private:
+        bool modeChanged;
+        bool shipChanged;
+        bool tModeChanged;
 };
 #endif

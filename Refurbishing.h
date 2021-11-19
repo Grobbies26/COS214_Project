@@ -3,13 +3,15 @@
 
 #include <iostream>
 #include "State.h"
+#include "ReadyToTest.h"
 
 using namespace std;
 
 class Refurbishing : public State
 {
 public:
-    void update(Rocket *r);
-    string getState();
+    Refurbishing();
+    void handle();
+    State *update();
 };
 #endif

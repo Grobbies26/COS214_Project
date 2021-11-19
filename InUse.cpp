@@ -3,12 +3,17 @@
 
 using namespace std;
 
-void InUse::update(Rocket *r)
+InUse::InUse()
 {
-
+    state = "InUse";
 }
 
-string InUse::getState()
+void InUse::handle()
 {
-    
+    cout << "The rocket has been used and is now getting refurbished" << endl;
+}
+
+State *InUse::update()
+{
+    return new Refurbishing();
 }

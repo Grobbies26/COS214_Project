@@ -6,11 +6,6 @@
 #include "SimBackup.h"
 
 class Simulation{
-    private:
-        SimBackup* state;
-        Mode* strategy;
-        Ship* ship;
-        bool tmode;
     public:
         Simulation();
         ~Simulation();
@@ -21,7 +16,11 @@ class Simulation{
         void setMode(Mode*);
         void setShip(Ship*);
         void isTMode();
-
+    private:
+        SimBackup* state;
+        Mode* strategy;
+        Ship* ship;
+        bool tmode;
 };
 
 #endif

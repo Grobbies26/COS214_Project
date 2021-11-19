@@ -2,23 +2,23 @@
 #define SIMBACKUP_H
 
 #include "SimStateInfo.h"
+#include "Mode.h"
+#include "Ship.h"
 
 class SimBackup
-{
-
-    
+{    
     public:
-        SimBackup();
+        SimBackup(Mode*,Ship*,bool);
         Mode* getMode();       
         Ship* getShip();   
         bool getTMode();   
         SimStateInfo* getState();
 
-     private:    
+    private:    
         Mode* strategy;
         Ship* ship;
         bool tmode;
-     
+    
         SimStateInfo* state;
 
 };
