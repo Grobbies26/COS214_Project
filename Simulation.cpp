@@ -7,7 +7,7 @@ using namespace std;
 
 Simulation :: Simulation()
 {
-
+    tmode = false;
     strategy = nullptr;
     ship = nullptr;
     state = new SimBackup();
@@ -28,7 +28,7 @@ Simulation::~Simulation(){
 
 void Simulation :: runSim(){   
     //test fire rocket
-    
+
     ship->attachPayload();
 
     strategy->run();   
@@ -52,5 +52,7 @@ void Simulation::setShip(Ship* ship){
     this->ship = ship;
 }
 
-
+void Simulation::isTMode(){
+    tmode = true;
+}
 

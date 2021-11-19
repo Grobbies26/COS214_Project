@@ -8,7 +8,7 @@ class Builder:public Ship{
     public:
         Builder();
         virtual ~Builder();
-        virtual Rocket* createShip(bool,int);
+        virtual void createShip(bool,int);
 };
 
 #endif

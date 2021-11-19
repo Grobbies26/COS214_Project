@@ -43,6 +43,7 @@ void setUpStrategy(Simulation* sim){
     {
     case 1:
         sim->setMode(new TMode());
+        sim->isTMode();
         break;
     case 2:
         
@@ -97,7 +98,7 @@ void setUpShip(Simulation* sim){
         }
     }
 
-    ship->setRocket(ship->createShip(heavy,m));
+    ship->createShip(heavy,m);
 
     sim->setShip(ship);
 

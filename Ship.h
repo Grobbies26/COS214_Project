@@ -11,7 +11,7 @@ class Ship{
     public:
         Ship();
         virtual ~Ship();
-        virtual Rocket* createShip(bool,int)=0;
+        virtual void createShip(bool,int)=0;
         virtual Rocket* getRocket();
         virtual Rocket* getPayload();
         virtual Rocket* getShip();
