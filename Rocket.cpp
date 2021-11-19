@@ -11,50 +11,58 @@ Rocket::Rocket(string p)
 
 Rocket::~Rocket()
 {
-    
 }
 
 void Rocket::change()
 {
-    
+    if (state->getState() == "Decommissioned"){
+        state->handle();
+    } else {
+        state->handle();
+        state = state->update();
+    }
 }
 
-State* Rocket::getState()
+void Rocket::decommission(){
+    state->setState(new Decommissioned());
+    state->handle();
+}
+
+void Rocket::handleRequest(Rocket *r)
 {
-    return this->state;
-}
-
-void Rocket::setState(State *s)
-{
-    this->state = s;
-}
-
-void Rocket::handleRequest(Rocket* r){
-    if(r->getSuccessor()==nullptr){
+    if (r->getSuccessor() == nullptr)
+    {
         cout << "Request could not be handled." << endl;
     }
-    else{
+    else
+    {
         getSuccessor()->handleRequest(r);
     }
 }
 
-void Rocket::add(Rocket* rckt){
-    if(successor == nullptr){
+void Rocket::add(Rocket *rckt)
+{
+    if (successor == nullptr)
+    {
         successor = rckt;
     }
-    else{
+    else
+    {
         successor->add(rckt);
     }
 }
 
-Rocket* Rocket::getSuccessor(){
+Rocket *Rocket::getSuccessor()
+{
     return successor;
 }
 
-void Rocket::setSuccessor(Rocket* r){
+void Rocket::setSuccessor(Rocket *r)
+{
     successor = r;
 }
 
-string Rocket::getPayloadType(){
+string Rocket::getPayloadType()
+{
     return payloadType;
 }

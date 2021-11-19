@@ -7,7 +7,9 @@ SimBackup :: SimBackup()
 }
 
 
-string SimBackup :: getName(){return success;}
+Mode* SimBackup :: getMode(){return strategy;}
 
-string SimBackup :: getDescription(){return payload;}; 
+Ship* SimBackup :: getShip(){return ship;}
+bool SimBackup :: getTMode(){return tmode;}
+
  SimStateInfo* SimBackup :: getState(){return state;}

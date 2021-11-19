@@ -1,28 +1,35 @@
 #include "SimStateInfo.h"
 
 SimStateInfo :: SimStateInfo():
-        successChanged (false),
-        payloadChanged (false)
+        modeChanged (false),
+        shipChanged (false) ,
+        tModeChanged (false)
       
 {}
 
 SimStateInfo :: SimStateInfo(const SimStateInfo& s) :
-    successChanged (s.successChanged),
-    payloadChanged (s.payloadChanged)
+    modeChanged (s.modeChanged),
+    shipChanged (s.shipChanged) ,
+    tModeChanged (s.tModeChanged)
  
 {}
 
-void SimStateInfo :: isSuccessChanged(){ successChanged = true;}
+void SimStateInfo :: setModeChanged(){ modeChanged = true;}
 
-void SimStateInfo :: setPayloadChanged(){ payloadChanged = true; }
+void SimStateInfo :: setShipChanged(){ shipChanged = true; }
+
+void SimStateInfo :: setTModeChanged(){ tModeChanged = true; }
+
+
 
 void SimStateInfo :: showState()
 {
-    if (successChanged || payloadChanged)
+    if (modeChanged || shipChanged || tModeChanged )
     {
         cout << "The following has changed: ";
-        if (successChanged) {cout << "success ";};
-        if (payloadChanged) {cout << "payload ";};
+        if (modeChanged) {cout << "Mode ";};
+        if (shipChanged) {cout << "Ship ";};
+         if (tModeChanged) {cout << "Test Mode ";};
         cout << endl;
     }
     else { cout << "Nothing has changed" << endl; }

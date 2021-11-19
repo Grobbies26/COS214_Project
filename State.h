@@ -2,15 +2,19 @@
 #define STATE_H
 
 #include <iostream>
-#include "Rocket.h"
 
 using namespace std;
 
 class State
 {
+protected:
+    string state;
+
 public:
     ~State();
-    virtual void update(Rocket *r) = 0;
-    virtual string getState() = 0;
+    virtual void handle() = 0;
+    virtual State update() = 0;
+    void setState(string);
+    string getState();
 };
 #endif
