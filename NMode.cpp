@@ -1,22 +1,23 @@
 #include "NMode.h"
 #include "BMode.h"
+#include "Rocket.h"
+#include "Starlink.h"
+#include "Dragonsc.h"
+#include "Crewdragon.h"
 
-NMode::NMode(bool b){
-    batch = b;
+NMode::NMode(){
 }
 
 NMode::~NMode(){
     
 }
 
-void NMode::run(){
-    //Temp stub
-    if(batch == true){
-        Mode* bat = new BMode();
+void NMode::run(Rocket* rocket){
+    Rocket* chain = new Starlink();
+    chain->add(new CrewDragon());
+    chain->add(new DragonSC());
 
-        bat->run();
+    chain->handleRequest(rocket);
 
-        delete bat;
-        return;
-    }
+    delete chain;
 }

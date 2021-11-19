@@ -1,6 +1,7 @@
 #include "Simulation.h"
 #include "NMode.h"
 #include "TMode.h"
+#include "BMode.h"
 #include "Builder.h"
 
 #include <iostream>
@@ -47,10 +48,10 @@ void setUpStrategy(Simulation* sim){
         break;
     case 2:
         
-        sim->setMode(new NMode(false));
+        sim->setMode(new NMode());
         break;
     case 3:
-        sim->setMode(new NMode(true));
+        sim->setMode(new BMode());
         break;
     }
 

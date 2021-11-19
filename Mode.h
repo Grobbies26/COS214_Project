@@ -1,11 +1,13 @@
 #ifndef MODE_H
 #define MODE_H
 
+#include "Rocket.h"
+
 class Mode{
     public:
         Mode();
         virtual ~Mode();
-        virtual void run() = 0;
+        virtual void run(Rocket*) = 0;
 };
 
 #endif

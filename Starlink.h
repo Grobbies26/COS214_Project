@@ -17,7 +17,4 @@ public:
     void handleRequest(Rocket*);
 };
 
-
-
-
 #endif

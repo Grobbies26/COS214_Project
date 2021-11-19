@@ -32,9 +32,9 @@ void Simulation :: runSim(){
 
     ship->attachPayload();
 
-    //state = createSimBackup();
+    state = createSimBackup();
 
-    strategy->run();   
+    strategy->run(ship->getShip());   
 }   
  
 SimBackup* Simulation :: createSimBackup()

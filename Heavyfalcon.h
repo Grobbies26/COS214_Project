@@ -6,12 +6,12 @@
 #include "Merlinengine.h"
 
 class HeavyFalcon : public Rocket {
-    private:
-        Falcon9Core** cores;
-        MerlinEngine** engines;
     public:
         HeavyFalcon();
         ~HeavyFalcon();
+    private:
+        Falcon9Core** cores;
+        MerlinEngine** engines;
 };
 
 #endif
