@@ -9,7 +9,7 @@ using namespace std;
 class Decommissioned : public State
 {
 public:
-    ReadyToTest();
+    Decommissioned();
     void handle();
     State *update();
 };
