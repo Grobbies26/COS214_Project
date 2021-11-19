@@ -3,12 +3,17 @@
 
 using namespace std;
 
-void Decommissioned::update(Rocket *r)
+Decommissioned::Decommissioned()
 {
-
+    state = "Decommissioned";
 }
 
-string Decommissioned::getState()
+void Decommissioned::handle()
 {
-    
+    cout << "The rocket has been decommissioned" << endl;
+}
+
+State *Decommissioned::update()
+{
+    return NULL;
 }

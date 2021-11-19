@@ -3,13 +3,15 @@
 
 #include <iostream>
 #include "State.h"
+#include "ReadyToUse.h"
 
 using namespace std;
 
 class Testing : public State
 {
 public:
-    void update(Rocket *r);
-    string getState();
+    ReadyToTest();
+    void handle();
+    State *update();
 };
 #endif

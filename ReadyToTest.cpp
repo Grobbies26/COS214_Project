@@ -3,12 +3,17 @@
 
 using namespace std;
 
-void ReadyToTest::update(Rocket *r)
+ReadyToTest::ReadyToTest()
 {
-
+    state = "ReadyToTest";
 }
 
-string ReadyToTest::getState()
+void ReadyToTest::handle()
 {
-    
+    cout << "The rocket is now going in for testing" << endl;
+}
+
+State *ReadyToTest::update()
+{
+    return new Testing();
 }

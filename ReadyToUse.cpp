@@ -3,12 +3,17 @@
 
 using namespace std;
 
-void ReadyToUse::update(Rocket *r)
+ReadyToUse::ReadyToUse()
 {
-
+    state = "ReadyToUse";
 }
 
-string ReadyToUse::getState()
+void ReadyToUse::handle()
 {
-    
+    cout << "The rocket is now in use" << endl;
+}
+
+State *ReadyToUse::update()
+{
+    return new InUse();
 }
