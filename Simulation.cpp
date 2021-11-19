@@ -10,7 +10,7 @@ Simulation :: Simulation()
     tmode = false;
     strategy = nullptr;
     ship = nullptr;
-    state = new SimBackup();
+    state = nullptr;
 }
     
 Simulation::~Simulation(){
@@ -29,7 +29,10 @@ Simulation::~Simulation(){
 void Simulation :: runSim(){   
     //test fire rocket
 
+
     ship->attachPayload();
+
+    //state = createSimBackup();
 
     strategy->run();   
 }   
