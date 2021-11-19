@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-BMode::BMode(Rocket* roc):Mode(roc){
+BMode::BMode(){
 
 }
 

@@ -4,7 +4,7 @@
 #include "Dragonsc.h"
 #include "Crewdragon.h"
 
-TMode::TMode(Rocket* roc):Mode(roc){
+TMode::TMode(){
 
 }
 

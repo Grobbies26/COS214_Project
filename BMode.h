@@ -6,7 +6,7 @@
 
 class BMode:public Mode{
     public:
-        BMode(Rocket*);
+        BMode();
         virtual ~BMode();
         virtual void run(Rocket*);
 };

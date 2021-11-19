@@ -5,11 +5,9 @@
 
 class Mode{
     public:
-        Mode(Rocket*);
+        Mode();
         virtual ~Mode();
         virtual void run(Rocket*) = 0;
-     private:
-        Rocket* rocket;
 };
 
 #endif

@@ -4,10 +4,8 @@
 #include "Mode.h"
 
 class NMode:public Mode{
-    private:
-        bool batch;
     public:
-        NMode(bool,Rocket*);    
+        NMode();    
         virtual ~NMode();
         virtual void run(Rocket*);
 };
