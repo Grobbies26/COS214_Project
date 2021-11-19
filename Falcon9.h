@@ -12,6 +12,11 @@ class Falcon9 : public Rocket {
     public:
         Falcon9();
         ~Falcon9();
+        Falcon9Core* getCore();
+        MerlinEngine* getEngine( int index );
+        bool coreSystemCheck(); //Returns true if core is ready.
+        bool engineSystemCheck(); //Returns true if all engines are ready.
+        void handleRequest(Rocket* pRocket);
 };
 
 #endif

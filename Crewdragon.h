@@ -3,11 +3,16 @@
 
 #include "Payload.h"
 #include "Rocket.h"
+#include "Singlevacuummerlin.h"
 
 class CrewDragon : public Payload {
+    private:   
+        SingleVacuumMerlin* engine;
     public:
         CrewDragon();
         void handleRequest(Rocket*);
+        SingleVacuumMerlin* getEngine();
+        bool engineSystemCheck(); //Returns true if engine is ready.
 };
 
 #endif

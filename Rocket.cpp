@@ -66,3 +66,23 @@ string Rocket::getPayloadType()
 {
     return payloadType;
 }
+
+Falcon9Core* Rocket::getCore( int index ){
+    return 0x0;
+}
+
+Falcon9Core* Rocket::getCore(){
+    return 0x0;
+}
+
+MerlinEngine* Rocket::getEngine( int index ){
+    return 0x0;
+}
+
+bool Rocket::coreSystemCheck(){
+    return false;
+}
+
+bool Rocket::engineSystemCheck(){
+    return false;
+}

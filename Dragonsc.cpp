@@ -15,4 +15,12 @@ void DragonSC::handleRequest(Rocket* r){
     }
 }
 
+SingleVacuumMerlin* DragonSC::getEngine(){
+    return this->engine;
+}
+
+bool DragonSC::engineSystemCheck(){
+    return this->engine->isActive();
+}
+
 #endif

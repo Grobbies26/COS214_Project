@@ -3,8 +3,21 @@
 
 #include "Merlinengine.h"
 
-MerlinEngine::MerlinEngine( MerlinEngine* mEngine ){
-    // TO DO
+MerlinEngine::MerlinEngine(){
+    this->ready = false;
 }
+
+void MerlinEngine::startEngine(){
+    this->ready = true;
+}
+
+void MerlinEngine::stopEngine(){
+    this->ready = false;
+}
+
+bool MerlinEngine::isActive(){
+    return this->ready;
+}
+
 
 #endif

@@ -2,6 +2,8 @@
 #define ROCKET_H
 
 #include "Singlevacuummerlin.h"
+#include "Falcon9core.h"
+#include "Merlinengine.h"
 #include "State.h"
 #include "Decommissioned.h"
 #include <iostream>
@@ -28,5 +30,10 @@ public:
     void setSuccessor(Rocket *);
     string getPayloadType();
     virtual void attach(Rocket*)=0;
+    virtual Falcon9Core* getCore( int index );
+    virtual Falcon9Core* getCore();
+    virtual MerlinEngine* getEngine( int index );
+    virtual bool coreSystemCheck();
+    virtual bool engineSystemCheck(); 
 };
 #endif
