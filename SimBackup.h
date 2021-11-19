@@ -5,17 +5,21 @@
 
 class SimBackup
 {
-        private:    
-        string success;
-        string payload;
-     
-        SimStateInfo* state;
 
+    
     public:
         SimBackup();
-        string getName();       
-        string getDescription();      
+        Mode* getMode();       
+        Ship* getShip();   
+        bool getTMode();   
         SimStateInfo* getState();
+
+     private:    
+        Mode* strategy;
+        Ship* ship;
+        bool tmode;
+     
+        SimStateInfo* state;
 
 };
 #endif

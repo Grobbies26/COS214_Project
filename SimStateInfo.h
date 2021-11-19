@@ -9,8 +9,11 @@ class SimStateInfo
 {
 
         private:
-        bool successChanged;
-        bool payloadChanged;
+        bool modeChanged;
+        bool shipChanged;
+        bool tModeChanged;
+
+     
        
 
 
@@ -18,8 +21,9 @@ class SimStateInfo
         SimStateInfo();
         SimStateInfo(const SimStateInfo& s);   // copy constructor
 
-        void isSuccessChanged();
-        void setPayloadChanged();
+        void setModeChanged();
+        void setShipChanged();
+        void setTModeChanged();
   
         void showState();
 
