@@ -1,9 +1,10 @@
 #include "SimBackup.h"
 
-SimBackup :: SimBackup()
-	   
-{
-
+SimBackup :: SimBackup(Mode* m,Ship* s,bool b){
+    strategy= m;
+    ship = s;
+    tmode = m;
+    state = new SimStateInfo();
 }
 
 
