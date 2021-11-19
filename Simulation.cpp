@@ -29,10 +29,13 @@ Simulation::~Simulation(){
 void Simulation :: runSim(){   
     //test fire rocket
 
+    if(tmode == true){
+        //
+    }
 
     ship->attachPayload();
 
-    state = createSimBackup();
+    state = createSimBackup(strategy,ship,tmode);
 
     strategy->run(ship->getShip());   
 }   

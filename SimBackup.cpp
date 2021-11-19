@@ -7,10 +7,9 @@ SimBackup :: SimBackup(Mode* m,Ship* s,bool b){
     state = new SimStateInfo();
 }
 
-
 Mode* SimBackup :: getMode(){return strategy;}
 
 Ship* SimBackup :: getShip(){return ship;}
 bool SimBackup :: getTMode(){return tmode;}
 
- SimStateInfo* SimBackup :: getState(){return state;}
+SimStateInfo* SimBackup :: getState(){return state;}
