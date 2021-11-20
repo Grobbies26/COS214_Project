@@ -4,19 +4,26 @@
 #include "Heavyfalcon.h"
 
 HeavyFalcon::HeavyFalcon() : Rocket( "HeavyFalcon" ){
+    Falcon9Core* cor = new Falcon9Core();
+
     this->cores = new Falcon9Core*[3];
 
     for ( int i = 0; i < 3; i++ ){
-        this->cores[ i ] = new Falcon9Core();
+        this->cores[ i ] = new Falcon9Core(*cor);
         this->cores[ i ]->startEngine();
     }
     
+    MerlinEngine* eng = new MerlinEngine();
+
     this->engines = new MerlinEngine*[27];
     
     for ( int i = 0; i < 27; i++ ) {
-        this->engines[ i ] = new MerlinEngine();
+        this->engines[ i ] = new MerlinEngine(*eng);
         this->engines[ i ]->startEngine();
     }
+
+    delete eng;
+    delete cor;
 }
 
 HeavyFalcon::~HeavyFalcon(){

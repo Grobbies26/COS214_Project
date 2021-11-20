@@ -8,12 +8,16 @@ Falcon9::Falcon9() : Rocket( "Falcon9" ){
 
     this->core->startEngine();
     
+    MerlinEngine* eng = new MerlinEngine();
+
     this->engines = new MerlinEngine*[9];
     
     for ( int i = 0; i < 9; i++ ) {
-        this->engines[ i ] = new MerlinEngine();
+        this->engines[ i ] = new MerlinEngine(*eng);
         this->engines[ i ]->startEngine();
     }
+
+    delete eng;
 }
 
 Falcon9::~Falcon9(){

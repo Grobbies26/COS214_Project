@@ -8,7 +8,7 @@ class BMode:public Mode{
     public:
         BMode();
         virtual ~BMode();
-        virtual void run(Rocket*,SimBackup*);
+        virtual void run(Rocket*);
 };
 
 #endif

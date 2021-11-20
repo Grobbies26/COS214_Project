@@ -7,7 +7,7 @@ class NMode:public Mode{
     public:
         NMode();    
         virtual ~NMode();
-        virtual void run(Rocket*,SimBackup*);
+        virtual void run(Rocket*);
 };
 
 #endif

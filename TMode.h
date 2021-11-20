@@ -7,7 +7,7 @@ class TMode:public Mode{
     public:
         TMode();
         virtual ~TMode();
-        virtual void run(Rocket*,SimBackup*);
+        virtual void run(Rocket*);
 };
 
 #endif
