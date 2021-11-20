@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ReadyToUse::ReadyToUse()
+ReadyToUse::ReadyToUse(Rocket* roc):State(roc)
 {
     state = "ReadyToUse";
 }
@@ -16,5 +16,5 @@ void ReadyToUse::handle()
 
 State *ReadyToUse::update()
 {
-    return new InUse();
+    return new InUse(getRocket());
 }

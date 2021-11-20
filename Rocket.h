@@ -22,7 +22,6 @@ private:
 public:
     Rocket(string);
     virtual ~Rocket();
-    void change();
     void decommission();
     virtual void handleRequest(Rocket *);
     void add(Rocket *);
@@ -34,7 +33,9 @@ public:
     virtual Falcon9Core* getCore();
     virtual MerlinEngine* getEngine( int index );
     virtual bool coreSystemCheck();
-    virtual bool engineSystemCheck(); 
+    virtual bool engineSystemCheck();
+    bool singleSystemCheck(); 
+    SingleVacuumMerlin* getSingle();
     void setState(State*);
     void staticFire();
 };

@@ -6,8 +6,6 @@
 #include "Singlevacuummerlin.h"
 
 class DragonSC : public Payload {
-    private:
-        SingleVacuumMerlin* engine;
     public:
         DragonSC();
         void handleRequest(Rocket*);

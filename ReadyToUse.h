@@ -10,7 +10,7 @@ using namespace std;
 class ReadyToUse : public State
 {
 public:
-    ReadyToUse();
+    ReadyToUse(Rocket*);
     void handle();
     State *update();
 };

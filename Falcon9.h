@@ -6,9 +6,6 @@
 #include "Merlinengine.h"
 
 class Falcon9 : public Rocket {
-    private:
-        Falcon9Core* core;
-        MerlinEngine** engines;
     public:
         Falcon9();
         ~Falcon9();
@@ -17,6 +14,9 @@ class Falcon9 : public Rocket {
         bool coreSystemCheck(); //Returns true if core is ready.
         bool engineSystemCheck(); //Returns true if all engines are ready.
         void handleRequest(Rocket* pRocket);
+    private:
+        Falcon9Core* core;
+        MerlinEngine** engines;
 };
 
 #endif

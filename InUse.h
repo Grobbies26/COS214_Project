@@ -10,7 +10,7 @@ using namespace std;
 class InUse : public State
 {
 public:
-    InUse();
+    InUse(Rocket*);
     void handle();
     State *update();
 };

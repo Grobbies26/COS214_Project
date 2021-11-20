@@ -1,4 +1,5 @@
 #include "Rocket.h"
+#include "SingleVacuumMerlin.h"
 #include <iostream>
 
 using namespace std;
@@ -7,6 +8,8 @@ Rocket::Rocket(string p)
 {
     successor = nullptr;
     payloadType = p;
+    single = new SingleVacuumMerlin();
+    single->startEngine();
 }
 
 Rocket::~Rocket()
@@ -19,16 +22,6 @@ Rocket::~Rocket()
     }
     if(single != nullptr){
         delete single;
-    }
-}
-
-void Rocket::change()
-{
-    if (state->getState() == "Decommissioned"){
-        state->handle();
-    } else {
-        state->handle();
-        state = state->update();
     }
 }
 
@@ -94,6 +87,14 @@ bool Rocket::coreSystemCheck(){
 
 bool Rocket::engineSystemCheck(){
     return false;
+}
+
+bool Rocket::singleSystemCheck(){
+    return this->single->isActive();
+}
+
+MerlinEngine* Rocket::getSingle(){
+    return single;
 }
 
 void Rocket::setState(State* s){

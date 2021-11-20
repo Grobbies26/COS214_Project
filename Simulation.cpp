@@ -27,7 +27,6 @@ Simulation::~Simulation(){
     }
 }
    
-
 void Simulation :: runSim(){   
     bool happy = false;
     string r = "";

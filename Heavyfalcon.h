@@ -9,14 +9,14 @@ class HeavyFalcon : public Rocket {
     public:
         HeavyFalcon();
         ~HeavyFalcon();
-    private:
-        Falcon9Core** cores;
-        MerlinEngine** engines;
         Falcon9Core* getCore( int index );
         MerlinEngine* getEngine( int index );
         bool coreSystemCheck(); //Returns true if all cores are ready.
         bool engineSystemCheck(); //Returns true if all engines are ready.
         void handleRequest(Rocket* pRocket);
+    private:
+        Falcon9Core** cores;
+        MerlinEngine** engines;
 };
 
 #endif
