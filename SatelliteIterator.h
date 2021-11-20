@@ -13,7 +13,7 @@ class SatelliteIterator{
         Stars* currentSatellite();
         Stars* nextSatellite();
         Stars* firstSatellite();
-        boolean hasNext();
+        bool hasNext();
 };
 
 #endif

@@ -3,18 +3,19 @@
 
 #include <iostream>
 #include "Rocket.h"
-#include "payload.h"
+#include "Payload.h"
+#include "Stars.h"
 
 using namespace std;
 
 class Starlink: public Payload
 {
-private:
-    
-public:
-    Starlink();
-    
-    void handleRequest(Rocket*);
+    public:
+        Starlink();
+        void handleRequest(Rocket*);
+        virtual void deliver();
+    private:
+        Stars* network;
 };
 
 #endif

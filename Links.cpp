@@ -1,6 +1,6 @@
 #include "Links.h"
 
-void Links:: Links(){
+Links:: Links(){
     head = nullptr;
 }
 
@@ -63,7 +63,8 @@ Links :: ~Links()
 {
     SatelliteIterator* it = createIterator(head);
     Stars* curr = it->firstSatellite();
-
+    Stars* prev = it->firstSatellite();
+    
     while (it->hasNext())
     {
         prev = curr;

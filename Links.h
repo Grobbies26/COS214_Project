@@ -8,27 +8,24 @@ using namespace std;
 
 class Links : public Stars
 {
-    private:
-    Stars* head;
-
     public:
-    Links();
-    ~Links();
+        Links();
+        ~Links();
 
-    void add (Stars*);
-    void remove();
+        void add (Stars*);
+        void remove();
 
-    void setNext(Stars* s){}
-    Stars* getHead();
-    
-    Stars* getNext(){
-        return nullptr;
-    }
+        void setNext(Stars* s){}
+        Stars* getHead();
+        
+        Stars* getNext(){
+            return nullptr;
+        }
 
-    SatelliteIterator* createIterator(Stars*);
+        SatelliteIterator* createIterator(Stars*);
 
-
-
+    private:
+        Stars* head;
 
 };
 

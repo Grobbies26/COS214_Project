@@ -9,8 +9,7 @@ class DragonSC : public Payload {
     public:
         DragonSC();
         void handleRequest(Rocket*);
-        SingleVacuumMerlin* getEngine();
-        bool engineSystemCheck(); //Returns true if engine is ready.
+        virtual void deliver();
 };
 
 #endif

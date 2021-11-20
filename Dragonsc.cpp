@@ -7,7 +7,8 @@ DragonSC::DragonSC(): Payload( "DragonSC" ){}
 
 void DragonSC::handleRequest(Rocket* r){
     if(r->getPayloadType() == "DragonSC"){
-        cout << "DragonSC initialising." << endl;
+        cout << "DragonSC has arrived at the space station." << endl;
+        deliver();
     }
     else{
         cout << "Incompatible payload. Request could not be handled by DragonSC."<<endl;
@@ -15,12 +16,8 @@ void DragonSC::handleRequest(Rocket* r){
     }
 }
 
-SingleVacuumMerlin* DragonSC::getEngine(){
-    return this->engine;
-}
-
-bool DragonSC::engineSystemCheck(){
-    return this->engine->isActive();
+void DragonSC::deliver(){
+    cout << "Cargo has been delivered to the space station" << endl;
 }
 
 #endif

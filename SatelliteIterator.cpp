@@ -10,7 +10,7 @@ SatelliteIterator::~SatelliteIterator(){
 
 }
 
-boolean SatelliteIterator::hasNext(){
+bool SatelliteIterator::hasNext(){
     if (current->getNext()){
         return true;
     }
@@ -28,6 +28,6 @@ Stars* SatelliteIterator::currentSatellite(){
 }
 
 Stars* SatelliteIterator::nextSatellite(){
-    current = current->next;
+    current = current->getNext();
     return current;
 }

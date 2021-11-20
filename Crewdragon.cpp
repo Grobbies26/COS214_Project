@@ -3,19 +3,20 @@
 
 #include "Crewdragon.h"
 
+#include <iostream>
+
 CrewDragon::CrewDragon(): Payload( "CrewDragon" ){
-    this->engine = new SingleVacuumMerlin();
-    this->engine->startEngine();
+
 }
 
 CrewDragon::~CrewDragon(){
-    delete this->engine;
-    this->engine = 0;
+
 }
 
 void CrewDragon::handleRequest(Rocket* r){
     if(r->getPayloadType() == "CrewDragon"){
-        cout << "CrewDragon initialising." << endl;
+        cout << "CrewDragon has arrived at the space station." << endl;
+        deliver();
     }
     else{
         cout << "Incompatible payload. Request could not be handled by CrewDragon."<<endl;
@@ -23,12 +24,9 @@ void CrewDragon::handleRequest(Rocket* r){
     }
 }
 
-SingleVacuumMerlin* CrewDragon::getEngine(){
-    return this->engine;
-}
-
-bool CrewDragon::engineSystemCheck(){
-    return this->engine->isActive();
+void CrewDragon::deliver(){
+    cout << "Crew has safely arrived at the space station" << endl;
+    cout << "Cargo has been delivered to the space station" << endl;
 }
 
 #endif

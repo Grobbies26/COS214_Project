@@ -10,6 +10,8 @@ class Payload : public Rocket {
         Payload(string);
         virtual ~Payload();
         virtual void attach(Rocket*);
+        void handleRequest(Rocket*)=0;
+        virtual void deliver()=0;
 };
 
 #endif

@@ -29,6 +29,7 @@ public:
     void setSuccessor(Rocket *);
     string getPayloadType();
     virtual void attach(Rocket*)=0;
+    virtual void deliver()=0;
     virtual Falcon9Core* getCore( int index );
     virtual Falcon9Core* getCore();
     virtual MerlinEngine* getEngine( int index );
