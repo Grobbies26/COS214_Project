@@ -59,12 +59,16 @@ Stars* Links ::getHead(){
     return head;
 }
 
+Stars* Links::getNext(){
+    return nullptr;
+}
+
 Links :: ~Links()
 {
     SatelliteIterator* it = createIterator(head);
     Stars* curr = it->firstSatellite();
     Stars* prev = it->firstSatellite();
-    
+
     while (it->hasNext())
     {
         prev = curr;

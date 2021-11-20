@@ -11,19 +11,12 @@ class Links : public Stars
     public:
         Links();
         ~Links();
-
         void add (Stars*);
         void remove();
-
         void setNext(Stars* s){}
         Stars* getHead();
-        
-        Stars* getNext(){
-            return nullptr;
-        }
-
+        Stars* getNext();
         SatelliteIterator* createIterator(Stars*);
-
     private:
         Stars* head;
 };

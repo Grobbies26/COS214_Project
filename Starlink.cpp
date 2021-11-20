@@ -8,6 +8,8 @@
 #include "SpaceXObserver.h"
 #include "SpaceXUser.h"
 #include "Stars.h"
+#include "ABSLaser.h"
+#include "Laser.h"
 
 using namespace std;
 
@@ -31,14 +33,28 @@ void Starlink::handleRequest(Rocket* r){
 }
 
 void Starlink::deliver(){
-    cout << "" << endl;
+    cout << "Beginning to spread out over area:" << endl;
     Stars* head = network->getHead();
     SpaceXObserver* ob1 = new SpaceXUser("Obi wan",head);
     SpaceXObserver* ob2 = new SpaceXUser("Kenobi",head);
     SpaceXObserver* ob3 = new SpaceXUser("General Greevus",head);
-    head->attachUser(ob1);
-    head->attachUser(ob2);
-    head->attachUser(ob3);
+    head->attachUser(ob1,0);
+    head->attachUser(ob2,1);
+    head->attachUser(ob3,2);
+    cout << "\n\t1\n\t2\n\t3\tAll satellites are in position." <<endl;
+    ABSLaser* laser = new Laser(network);
 
-    head->st
+    cout << "Issue encountered." <<endl;
+
+    head->setState("unstable");
+    head->sendRadioSignal();
+    head->statusChanged(laser);
+    
+    cout << "Issue has been resolved by technician." <<endl;
+
+    head->setState("operational");
+    head->sendRadioSignal();
+    head->statusChanged(laser);
+    
+    delete laser;
 }

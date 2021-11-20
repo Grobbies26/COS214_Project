@@ -4,7 +4,7 @@
 #include <iostream>
 #include "Rocket.h"
 #include "Payload.h"
-#include "Stars.h"
+#include "Links.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ class Starlink: public Payload
         void handleRequest(Rocket*);
         virtual void deliver();
     private:
-        Stars* network;
+        Links* network;
 };
 
 #endif

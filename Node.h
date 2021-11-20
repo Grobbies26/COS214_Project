@@ -4,30 +4,26 @@
 #include "Stars.h"
 #include <vector>
 #include "SpaceXObserver.h"
-#include "Laser.h"
+#include "ABSLaser.h"
 
 class Node : public Stars
 {
     public:
         Node();
         ~Node();
-
         void setNext(Stars*);
         Stars* getNext();
-
-        void attachUser(SpaceXObserver*);
-        void detachUser(SpaceXObserver*);
+        void attachUser(SpaceXObserver*,int);
         string getState();
-        void sendRadioSignal();
-        
+        void sendRadioSignal();        
         void setState(string);
-        void statusChanged(Laser*);
+        void statusChanged(ABSLaser*);
         void LaserCommunication(string);
     private:
         Stars* next;
         string status;
-        vector<SpaceXObserver*> SXUserlist;
-        Laser* laser;
+        SpaceXObserver** SXUserlist;
+        ABSLaser* laser;
 };
 
 #endif

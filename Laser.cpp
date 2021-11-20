@@ -1,6 +1,7 @@
 #include <iostream>
 #include "Laser.h"
 #include "Stars.h"
+#include "SatelliteIterator.h"
 
 using namespace std;
 

@@ -3,11 +3,11 @@
 
 #include <iostream>
 #include "Links.h"
-#include "SatelliteIterator.h"
+#include "ABSLaser.h"
 
 using namespace std;
 
-class Laser
+class Laser:public ABSLaser
 {
 private:
     Links* nodeList;

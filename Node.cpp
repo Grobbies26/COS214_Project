@@ -1,11 +1,20 @@
 #include "Node.h"
+#include "SpaceXObserver.h"
+#include "SpaceXUser.h"
+#include "ABSLaser.h"
 #include <iostream>
 
 Node::Node(){
     status = "operational";  // states are operational, unstable, critical
+    SXUserlist = new SpaceXUser*[3];
 }
 
-Node::~Node(){}
+Node::~Node(){
+    for(int i = 0; i < 3;i++){
+        delete SXUserlist[i];
+    }
+    delete [] SXUserlist;
+}
 
 void Node::setNext(Stars* s){
     next = s;
@@ -15,21 +24,8 @@ Stars* Node::getNext(){
     return next;
 }
 
-void Node::attachUser(SpaceXObserver* sxu){
-    SXUserlist.push_back(sxu);
-}
-
-void Node::detachUser(SpaceXObserver* sxu){
-    bool found = false;
-    vector<SpaceXObserver*>::iterator it = SXUserlist.begin();
-
-    while ((it != SXUserlist.end()) && (!found)) {
-        if (*it == sxu) {
-            found = true;
-            SXUserlist.erase(it);
-        }
-        ++it;
-    }
+void Node::attachUser(SpaceXObserver* sxu,int i){
+    SXUserlist[i]=sxu;
 }
 
 string Node::getState(){
@@ -37,9 +33,8 @@ string Node::getState(){
 }
 
 void Node::sendRadioSignal(){
-    vector<SpaceXObserver*>::iterator it = SXUserlist.begin();
-    for (it = SXUserlist.begin(); it != SXUserlist.end(); ++it){
-        (*it)->update();
+    for(int i = 0;i < 3; i++){
+        SXUserlist[i]->update();
     }
 }
 
@@ -48,7 +43,7 @@ void Node::setState(string s){
 }
 
 
-void Node::statusChanged(Laser* l){
+void Node::statusChanged(ABSLaser* l){
     laser = l;
     laser->notify(this->getState());
 }
