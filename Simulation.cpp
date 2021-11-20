@@ -36,10 +36,10 @@ void Simulation :: runSim(){
             cout << "Would you like to change something(Y/N): ";
             cin >> r;
             if(r == "Y"){
-                happy == false;
+                happy = false;
             }
             else if(r == "N"){
-                happy == true;
+                happy = true;
             }
             else{
                 cout << endl << "Invalid input" << endl;
@@ -52,10 +52,10 @@ void Simulation :: runSim(){
             cout << "Would you like to re-test the rocket(Y/N): ";
             cin >> r;
             if(r == "Y"){
-                happy == false;
+                happy = false;
             }
             else if(r == "N"){
-                happy == true;
+                happy = true;
             }
             else{
                 cout << endl << "Invalid input" << endl;
@@ -128,12 +128,12 @@ void Simulation::newShip(){
         
         cin >> m;
         if(m == 1){
-            heavy == true;
+            heavy = true;
             valid = true;
         } 
         else if(m == 2){
-            heavy == false;
-            valid == true;
+            heavy = false;
+            valid = true;
         }
         else{
             cout<< endl << "Invalid input." << endl;
@@ -152,10 +152,10 @@ void Simulation::alterRocket(){
         cout << "Would you like to alter the rocket (Y/N): ";
         cin >> r;
         if(r == "Y"){
-            valid == true;
+            valid = true;
         }
         else if(r == "N"){
-            valid == false;
+            valid = false;
             return;
         }
         else{
