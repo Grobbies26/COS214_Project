@@ -5,7 +5,7 @@
 
 using namespace std;
 
-ReadyToTest::ReadyToTest(Rocket* roc):State(roc)
+ReadyToTest::ReadyToTest(bool c, bool e, bool s):State(c,e,s)
 {
     state = "ReadyToTest";
 }
@@ -17,5 +17,5 @@ void ReadyToTest::handle()
 
 State *ReadyToTest::update()
 {
-    return new Testing(getRocket());
+    return new Testing(getCore(),getEngine(),getSingle());
 }

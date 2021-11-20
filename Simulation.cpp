@@ -167,7 +167,7 @@ void Simulation::alterRocket(){
 }
 
 void Simulation::testRocket(Rocket* rocket){
-    rocket->setState(new ReadyToTest());
+    rocket->setState(new ReadyToTest(rocket->coreSystemCheck(),rocket->engineSystemCheck(),rocket->singleSystemCheck()));
     rocket->staticFire();
 }
 

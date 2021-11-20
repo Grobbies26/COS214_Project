@@ -5,7 +5,7 @@
 
 using namespace std;
 
-Refurbishing::Refurbishing(Rocket* roc):State(roc)
+Refurbishing::Refurbishing(bool c, bool e, bool s):State(c,e,s)
 {
     state = "Refurbishing";
 }
@@ -17,5 +17,5 @@ void Refurbishing::handle()
 
 State *Refurbishing::update()
 {
-    return new ReadyToUse(getRocket());
+    return new ReadyToUse(getCore(),getEngine(),getSingle());
 }

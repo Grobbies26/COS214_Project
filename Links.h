@@ -26,7 +26,6 @@ class Links : public Stars
 
     private:
         Stars* head;
-
 };
 
 #endif

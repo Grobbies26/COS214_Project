@@ -11,6 +11,8 @@ public:
   virtual void setNext(Stars*) = 0;
 
   virtual Stars* getNext() = 0;
+  virtual string getState(){return "";}
+  virtual void statusChanged(Laser*){};
 
   virtual void LaserCommunication(string s){}
   

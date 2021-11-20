@@ -12,7 +12,6 @@ public:
     SpaceXObserver(){}
     virtual ~SpaceXObserver(){}
     virtual void update() = 0;
- 
 };
 
 #endif

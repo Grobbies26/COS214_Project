@@ -4,7 +4,7 @@
 
 using namespace std;
 
-InUse::InUse(Rocket* roc):State(roc)
+InUse::InUse(bool c, bool e, bool s):State(c,e,s)
 {
     state = "InUse";
 }
@@ -12,13 +12,13 @@ InUse::InUse(Rocket* roc):State(roc)
 void InUse::handle()
 {
     cout << getState() << ": The rocket is now in use for the real launch" << endl;
-    if(rocket->coreSystemCheck()){
+    if(getCore()){
         cout << "\tAll cores are ready to be used in real launch" << endl;
     }
-    if(rocket->engineSystemCheck()){
+    if(getEngine()){
         cout << "\tAll engines are ready to be used in real launch" << endl;
     }
-    if(rocket->singleSystemCheck()){
+    if(getSingle()){
         cout << "\tSingle vacuum merlin engine is ready to be used in real launch" << endl;
     }
 }

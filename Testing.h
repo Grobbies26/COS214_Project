@@ -10,7 +10,7 @@ using namespace std;
 class Testing : public State
 {
 public:
-    Testing(Rocket*);
+    Testing(bool,bool,bool);
     void handle();
     State *update();
 };

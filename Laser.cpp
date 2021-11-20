@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Laser.h"
+#include "Stars.h"
 
 using namespace std;
 

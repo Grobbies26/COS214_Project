@@ -10,7 +10,7 @@ using namespace std;
 class Refurbishing : public State
 {
 public:
-    Refurbishing(Rocket*);
+    Refurbishing(bool, bool, bool);
     void handle();
     State *update();
 };

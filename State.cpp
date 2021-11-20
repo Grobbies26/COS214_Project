@@ -5,11 +5,15 @@
 using namespace std;
 
 State::State(){
-    rocket = nullptr;
+    core = false;
+    engine = false;
+    single = false;
 }
 
-State::State(Rocket* roc){
-    rocket = roc;
+State::State(bool c, bool e, bool s){
+    core = c;
+    engine = e;
+    single = s;
 }
 
 State::~State(){
@@ -24,6 +28,14 @@ void State::setState(string s){
     state = s;
 }
 
-Rocket* State::getRocket(){
-    return rocket;
+bool State::getSingle(){
+    return single;
+}
+
+bool State::getCore(){
+    return core;
+}
+
+bool State::getEngine(){
+    return engine;
 }

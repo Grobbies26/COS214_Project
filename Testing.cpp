@@ -5,25 +5,25 @@
 
 using namespace std;
 
-Testing::Testing(Rocket* roc):State(roc){
+Testing::Testing(bool c, bool e, bool s):State(c,e,s){
     state = "Testing";
 }
 
 void Testing::handle()
 {
     cout << getState() << ": The rocket is now being tested" << endl;
-    if(rocket->coreSystemCheck()){
+    if(getCore()){
         cout << "\tAll cores are functioning normally" << endl;
     }
-    if(rocket->engineSystemCheck()){
+    if(getEngine()){
         cout << "\tAll engines are functioning normally" << endl;
     }
-    if(rocket->singleSystemCheck()){
+    if(getSingle()){
         cout << "\tSingle vacuum merlin engine is functioning normally" << endl;
     }
 }
 
 State *Testing::update()
 {
-    return new Refurbishing(getRocket());
+    return new Refurbishing(getCore(),getEngine(),getSingle());
 }

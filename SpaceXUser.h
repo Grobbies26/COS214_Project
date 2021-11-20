@@ -9,12 +9,12 @@ using namespace std;
 
 class SpaceXUser : public SpaceXObserver
 {
-private:
-    string name;
-    Stars* star;
-public:
-    SpaceXUser(string, Stars*);
-    void update();
+    public:
+        SpaceXUser(string, Stars*);
+        void update();
+    private:
+        string name;
+        Stars* star;
 };
 
 

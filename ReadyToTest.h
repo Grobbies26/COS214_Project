@@ -10,7 +10,7 @@ using namespace std;
 class ReadyToTest : public State
 {
 public:
-    ReadyToTest(Rocket*);
+    ReadyToTest(bool, bool, bool);
     void handle();
     State *update();
 };

@@ -4,7 +4,6 @@
 #include <iostream>
 #include "Links.h"
 #include "SatelliteIterator.h"
-#include "Stars.h"
 
 using namespace std;
 
