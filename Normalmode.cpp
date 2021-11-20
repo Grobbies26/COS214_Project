@@ -3,9 +3,13 @@
 
 #include "Normalmode.h"
 
+NormalMode::NormalMode(Simulation* s):Command(s){
+
+}
+
 void NormalMode::execute(){
     std::cout << "Executing \"NormalMode\" command.\n";
-    //Subject to appendage.
+    sim->nm();
 }
 
 #endif

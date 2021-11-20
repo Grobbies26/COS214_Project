@@ -3,9 +3,13 @@
 
 #include "Storesim.h"
 
+StoreSim::StoreSim(Simulation* s):Command(s){
+
+}
+
 void StoreSim::execute(){
     std::cout << "Executing \"Store Sim\" command.\n";
-    //Subject to appendage.
+    sim->setBack(sim->createSimBackup(sim->getStrat(),sim->getShip(),sim->getTmode()));
 }
 
 #endif

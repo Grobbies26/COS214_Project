@@ -8,6 +8,7 @@ class Button {
         Command* role;
     public:
         Button( Command* );
+        ~Button();
         void press();
 };
 

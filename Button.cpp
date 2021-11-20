@@ -7,6 +7,10 @@ Button::Button( Command* pCommand ){
     this->role = pCommand;
 }
 
+Button::~Button(){
+    delete role;
+}
+
 void Button::press(){
     this->role->execute();
 }

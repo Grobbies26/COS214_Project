@@ -3,9 +3,8 @@
 
 #include "Command.h"
 
-
-void Command::execute(){
-    std::cout << "Test command executing.\n";
+Command::Command(Simulation* s){
+    sim = s;
 }
 
 #endif 

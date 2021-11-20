@@ -3,9 +3,13 @@
 
 #include "Launch.h"
 
+Launch::Launch(Simulation* s):Command(s){
+
+}
+
 void Launch::execute(){
     std::cout << "Executing \"Launch\" command.\n";
-    //Subject to appendage.
+    sim->getStrat()->run(sim->getShip()->getShip());
 }
 
 #endif

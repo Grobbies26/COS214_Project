@@ -3,9 +3,13 @@
 
 #include "Testmode.h"
 
+TestMode::TestMode(Simulation* s):Command(s){
+
+}
+
 void TestMode::execute(){
     std::cout << "Executing \"TestMode\" command.\n";
-    //Subject to appendage.
+    sim->tm();
 }
 
 #endif

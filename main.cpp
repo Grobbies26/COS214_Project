@@ -10,13 +10,27 @@ void setUpShip(Simulation*);
 
 int main(){
     Simulation* simulation = new Simulation();
-    setUpStrategy(simulation);
-    setUpShip(simulation);
-
-    //save sim backup always
-
-    simulation->runSim();
-
+    
+    bool valid = true;
+    string r = "";
+    while (valid == false)
+    {
+        setUpStrategy(simulation);
+        setUpShip(simulation);
+        simulation->runSim();
+        cout<<"Repeat the Process(Y/N):"; 
+        cin >> r;
+        if(r == "Y"){
+            valid = false;
+        } 
+        else if(r == "N"){
+            valid = true;
+        }
+        else{
+            cout<< endl << "Invalid input. Terminating." << endl;
+            valid = true;
+        }
+    }
     delete simulation;
 
     return 0;
