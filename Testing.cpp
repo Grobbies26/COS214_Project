@@ -1,5 +1,7 @@
 #include "Testing.h"
+#include "Refurbishing.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,10 +12,10 @@ Testing::Testing()
 
 void Testing::handle()
 {
-    cout << "The rocket has been tested and is ready to use" << endl;
+    cout << getState() << ": The rocket is now being tested" << endl;
 }
 
 State *Testing::update()
 {
-    return new ReadyToUse();
+    return new Refurbishing();
 }

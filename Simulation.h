@@ -12,10 +12,12 @@ class Simulation{
         SimBackup* createSimBackup(Mode*,Ship*,bool);
         void setBackup(SimBackup*);
         void runSim();
-        
         void setMode(Mode*);
         void setShip(Ship*);
+        void newShip();
         void isTMode();
+        void alterRocket();
+        void testRocket(Rocket*);
     private:
         SimBackup* state;
         Mode* strategy;

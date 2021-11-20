@@ -1,5 +1,7 @@
 #include "ReadyToTest.h"
+#include "Testing.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,7 +12,7 @@ ReadyToTest::ReadyToTest()
 
 void ReadyToTest::handle()
 {
-    cout << "The rocket is now going in for testing" << endl;
+    cout << getState() <<": The rocket is now going in for testing" << endl;
 }
 
 State *ReadyToTest::update()

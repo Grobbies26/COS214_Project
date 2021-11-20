@@ -4,7 +4,7 @@
 using namespace std;
 
 State::~State(){
-    delete state;
+    
 }
 
 string State::getState(){

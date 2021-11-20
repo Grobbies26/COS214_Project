@@ -13,7 +13,7 @@ protected:
 public:
     ~State();
     virtual void handle() = 0;
-    virtual State update() = 0;
+    virtual State* update() = 0;
     void setState(string);
     string getState();
 };

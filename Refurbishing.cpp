@@ -1,5 +1,7 @@
 #include "Refurbishing.h"
+#include "ReadyToUse.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,10 +12,10 @@ Refurbishing::Refurbishing()
 
 void Refurbishing::handle()
 {
-    cout << "The rocket has been used and is now getting refurbished" << endl;
+    cout << getState() << ": The rocket has been tested and is now getting refurbished" << endl;
 }
 
 State *Refurbishing::update()
 {
-    return new ReadyToTest();
+    return new ReadyToUse();
 }

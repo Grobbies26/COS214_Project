@@ -35,5 +35,7 @@ public:
     virtual MerlinEngine* getEngine( int index );
     virtual bool coreSystemCheck();
     virtual bool engineSystemCheck(); 
+    void setState(State*);
+    void staticFire();
 };
 #endif

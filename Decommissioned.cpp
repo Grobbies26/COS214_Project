@@ -1,5 +1,6 @@
 #include "Decommissioned.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ Decommissioned::Decommissioned()
 
 void Decommissioned::handle()
 {
-    cout << "The rocket has been decommissioned" << endl;
+    cout << getState() << ": The rocket has been decommissioned" << endl;
 }
 
 State *Decommissioned::update()

@@ -2,7 +2,6 @@
 #include "NMode.h"
 #include "TMode.h"
 #include "BMode.h"
-#include "Builder.h"
 
 #include <iostream>
 
@@ -59,49 +58,5 @@ void setUpStrategy(Simulation* sim){
 }
 
 void setUpShip(Simulation* sim){
-    Ship* ship = new Builder();
-
-    bool valid = false;
-    bool heavy = false;
-    int m;
-
-    while (valid == false)
-    {
-        cout<<"Please select the payload type: \n\t1: Starlink \n\t2: Crew Dragon \n\t3: Dragon Space Craft"<<endl;
-        cout<<"Enter 1,2,3: ";
-        
-        cin >> m;
-        if(m < 4 && m > 0){
-            valid = true;
-        } 
-        else{
-            cout<< endl << "Invalid input." << endl;
-        }
-    }
-
-    valid = false;
-    while (valid == false && m != 1)
-    {
-        cout<<"Please select the rocket type: \n\t1: Heavy Falcon \n\t2: Falcon 9 "<<endl;
-        cout<<"Enter 1,2: ";
-        
-        cin >> m;
-        if(m == 1){
-            heavy == true;
-            valid = true;
-        } 
-        else if(m == 2){
-            heavy == false;
-            valid == true;
-        }
-        else{
-            cout<< endl << "Invalid input." << endl;
-        }
-    }
-
-    ship->createShip(heavy,m);
-
-    sim->setShip(ship);
-
-    return;
+    sim->newShip();
 }

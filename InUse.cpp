@@ -1,5 +1,6 @@
 #include "InUse.h"
 #include <iostream>
+#include <string>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ InUse::InUse()
 
 void InUse::handle()
 {
-    cout << "The rocket has been used and is now getting refurbished" << endl;
+    cout << getState() << ": The rocket is now in use" << endl;
 }
 
 State *InUse::update()
