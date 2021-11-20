@@ -8,7 +8,7 @@ class Mode{
     public:
         Mode();
         virtual ~Mode();
-        virtual void run(Rocket*,SimBackup*) = 0;
+        virtual void run(Rocket*) = 0;
 };
 
 #endif

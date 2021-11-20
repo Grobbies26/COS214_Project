@@ -69,9 +69,23 @@ void Simulation :: runSim(){
     ship->attachPayload();
 
     state = createSimBackup(strategy,ship,tmode);
-
-    strategy->run(ship->getShip(),state);   
-
+    valid = false;
+    r = "";
+    while (valid == false){
+        strategy->run(ship->getShip());
+        cout << "Did an error occur in the simulation (Y,N): ";
+        cin >> r;
+        if(r == "Y"){
+            valid = false;
+        }
+        else if(r == "N"){
+            valid = true;
+        }
+        else{
+            cout << endl << "Invalid input" << endl;
+        }
+    }
+       
     ship->getShip()->decommission();
 }   
  
