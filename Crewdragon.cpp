@@ -20,13 +20,13 @@ void CrewDragon::handleRequest(Rocket* r){
     }
     else{
         cout << "Incompatible payload. Request could not be handled by CrewDragon."<<endl;
-        Rocket::handleRequest(r);
+        getSuccessor()->handleRequest(r);
     }
 }
 
 void CrewDragon::deliver(){
-    cout << "Crew has safely arrived at the space station" << endl;
-    cout << "Cargo has been delivered to the space station" << endl;
+    cout << "\tCrew has safely arrived at the space station" << endl;
+    cout << "\tCargo has been delivered to the space station" << endl;
 }
 
 #endif

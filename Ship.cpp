@@ -41,6 +41,4 @@ void Ship::setShip(Rocket* roc){
 void Ship::attachPayload(){
     payload->attach(rocket);
     ship = payload;
-    payload = nullptr;
-    rocket = nullptr;
 }

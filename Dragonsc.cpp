@@ -14,12 +14,12 @@ void DragonSC::handleRequest(Rocket* r){
     }
     else{
         cout << "Incompatible payload. Request could not be handled by DragonSC."<<endl;
-        Rocket::handleRequest(r);
+        getSuccessor()->handleRequest(r);
     }
 }
 
 void DragonSC::deliver(){
-    cout << "Cargo has been delivered to the space station" << endl;
+    cout << "\tCargo has been delivered to the space station" << endl;
 }
 
 #endif

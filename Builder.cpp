@@ -51,6 +51,6 @@ void Builder::createShip(bool heavy,int pay){
     payload = RF->createPayload();
     setRocket(rocket);
     setPayload(payload);
-    cout << "1" << endl;
+
     delete RF;
 }

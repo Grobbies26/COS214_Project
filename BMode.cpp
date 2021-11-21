@@ -6,6 +6,8 @@
 
 #include <iostream>
 
+using namespace std;
+
 BMode::BMode(){
 
 }
@@ -20,8 +22,8 @@ void BMode::run(Rocket* rocket){
     while (valid == false){
         cout << "How many times would you like to run the simulation: ";
         cin >> m;
-        if(m > 1){
-            valid == true;
+        if(m >= 1){
+            valid = true;
         }
         else{
             cout<< endl << "Invalid input." << endl;

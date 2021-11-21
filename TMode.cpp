@@ -34,7 +34,6 @@ void TMode::run(Rocket* rocket){
         }
 
     }   
-    chain->handleRequest(rocket);
 
     delete chain;
 }

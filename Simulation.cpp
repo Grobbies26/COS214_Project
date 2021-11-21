@@ -33,9 +33,6 @@ void Simulation :: runSim(){
     else{
         list[1]->press();
     }
-
-
-    cout << "Simulation completed successfully" << endl;
 }   
 
 SimBackup* Simulation :: createSimBackup(Mode* m,Ship* s,bool b)

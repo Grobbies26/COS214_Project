@@ -28,7 +28,7 @@ void Starlink::handleRequest(Rocket* r){
     }
     else{
         cout << "Incompatible payload. Request could not be handled by Starlink."<<endl;
-        Rocket::handleRequest(r);
+        getSuccessor()->handleRequest(r);
     }
 }
 

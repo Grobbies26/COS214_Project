@@ -32,21 +32,14 @@ void Rocket::decommission(){
 
 void Rocket::handleRequest(Rocket *r)
 {
-    if (r->getSuccessor() == nullptr)
-    {
-        cout << "Request could not be handled." << endl;
-    }
-    else
-    {
-        getSuccessor()->handleRequest(r);
-    }
+    
 }
 
 void Rocket::add(Rocket *rckt)
 {
     if (successor == nullptr)
     {
-        successor = rckt;
+        setSuccessor(rckt);
     }
     else
     {

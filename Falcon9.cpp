@@ -18,6 +18,8 @@ Falcon9::Falcon9() : Rocket( "Falcon9" ){
     }
 
     delete eng;
+
+    cout << "Falcon 9's 9 engines and the single core have been prepped for use." << endl;
 }
 
 Falcon9::~Falcon9(){

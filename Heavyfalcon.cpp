@@ -1,6 +1,7 @@
 #ifndef HEAVY_FALCON_CPP
 #define HEAVY_FALCON_CPP
 
+#include <iostream>
 #include "Heavyfalcon.h"
 
 HeavyFalcon::HeavyFalcon() : Rocket( "HeavyFalcon" ){
@@ -24,6 +25,8 @@ HeavyFalcon::HeavyFalcon() : Rocket( "HeavyFalcon" ){
 
     delete eng;
     delete cor;
+
+    cout << "Heavy Falcons 27 engines and the 3 core have been prepped for use." << endl;
 }
 
 HeavyFalcon::~HeavyFalcon(){
