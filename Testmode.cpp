@@ -3,7 +3,7 @@
 
 #include "Testmode.h"
 
-TestMode::TestMode(Simulation* s):Command(s){
+TestMode::TestMode(ABSSim* s):Command(s){
 
 }
 

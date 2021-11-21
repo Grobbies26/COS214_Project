@@ -2,11 +2,11 @@
 #define NORMAL_MODE_H
 
 #include "Command.h"
-#include "Simulation.h"
+#include "ABSSim.h"
 
 class NormalMode: public Command {
     public:
-        NormalMode(Simulation*);
+        NormalMode(ABSSim*);
         virtual void execute();
 };
 

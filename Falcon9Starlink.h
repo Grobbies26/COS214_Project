@@ -7,6 +7,8 @@ using namespace std;
 class Falcon9Starlink : public RocketFactory
 {
 public:
+    Falcon9Starlink();
+    ~Falcon9Starlink();
     Rocket* createRocket();
     Rocket* createPayload();
 };

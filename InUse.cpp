@@ -25,5 +25,5 @@ void InUse::handle()
 
 State *InUse::update()
 {
-    return new Refurbishing(getRocket());
+    return new Refurbishing(getCore(),getEngine(),getSingle());
 }

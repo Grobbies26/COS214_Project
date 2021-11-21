@@ -8,6 +8,7 @@
 class DragonSC : public Payload {
     public:
         DragonSC();
+        ~DragonSC();
         void handleRequest(Rocket*);
         virtual void deliver();
 };

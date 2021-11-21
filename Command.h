@@ -1,16 +1,16 @@
 #ifndef COMMAND_H
 #define COMMAND_H
 
-#include "Simulation.h"
+class ABSSim;
 
 #include <iostream>
 
 class Command{
     public:
-        Command(Simulation*);
+        Command(ABSSim*);
         virtual void execute()=0;
     protected:
-        Simulation* sim;
+        ABSSim* sim;
 };
 
 #endif

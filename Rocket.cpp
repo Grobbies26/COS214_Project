@@ -93,7 +93,7 @@ bool Rocket::singleSystemCheck(){
     return this->single->isActive();
 }
 
-MerlinEngine* Rocket::getSingle(){
+SingleVacuumMerlin* Rocket::getSingle(){
     return single;
 }
 

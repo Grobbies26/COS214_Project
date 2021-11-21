@@ -14,6 +14,8 @@ class Falcon9 : public Rocket {
         bool coreSystemCheck(); //Returns true if core is ready.
         bool engineSystemCheck(); //Returns true if all engines are ready.
         void handleRequest(Rocket* pRocket);
+        void attach(Rocket* r){}
+        void deliver(){}
     private:
         Falcon9Core* core;
         MerlinEngine** engines;

@@ -3,7 +3,7 @@
 
 #include "Storesim.h"
 
-StoreSim::StoreSim(Simulation* s):Command(s){
+StoreSim::StoreSim(ABSSim* s):Command(s){
 
 }
 

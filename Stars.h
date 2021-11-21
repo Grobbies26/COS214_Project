@@ -2,7 +2,6 @@
 #define STARS_H
 
 #include "SpaceXObserver.h"
-#include "SatelliteIterator.h"
 #include "ABSLaser.h"
 
 #include <iostream>

@@ -5,6 +5,14 @@
 
 using namespace std;
 
+HeavyFalconCrewDragon::HeavyFalconCrewDragon(){
+    cout << "b" << endl;
+}
+
+HeavyFalconCrewDragon::~HeavyFalconCrewDragon(){
+
+}
+
 Rocket* HeavyFalconCrewDragon::createRocket(){
     return new HeavyFalcon();
 }

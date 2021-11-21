@@ -5,6 +5,14 @@
 
 using namespace std;
 
+Falcon9DragonSC::Falcon9DragonSC(){
+
+}
+
+Falcon9DragonSC::~Falcon9DragonSC(){
+    
+}
+
 Rocket* Falcon9DragonSC::createRocket(){
     return new Falcon9();
 }

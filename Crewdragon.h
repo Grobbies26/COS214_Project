@@ -8,6 +8,7 @@
 class CrewDragon : public Payload {
     public:
         CrewDragon();
+        ~CrewDragon();
         void handleRequest(Rocket*);
         virtual void deliver();
 };

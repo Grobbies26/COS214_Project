@@ -6,7 +6,7 @@
 
 Node::Node(){
     status = "operational";  // states are operational, unstable, critical
-    SXUserlist = new SpaceXUser*[3];
+    SXUserlist = new SpaceXObserver*[3];
 }
 
 Node::~Node(){

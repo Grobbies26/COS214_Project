@@ -10,8 +10,7 @@ void setUpShip(Simulation*);
 
 int main(){
     Simulation* simulation = new Simulation();
-    
-    bool valid = true;
+    bool valid = false;
     string r = "";
     while (valid == false)
     {

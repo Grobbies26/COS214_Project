@@ -3,7 +3,7 @@
 
 #include "Launch.h"
 
-Launch::Launch(Simulation* s):Command(s){
+Launch::Launch(ABSSim* s):Command(s){
 
 }
 

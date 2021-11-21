@@ -2,11 +2,11 @@
 #define STORE_SIM_H
 
 #include "Normalmode.h"
-#include "Simulation.h"
+#include "ABSSim.h"
 
-class StoreSim: public NormalMode {
+class StoreSim: public Command {
     public:
-        StoreSim(Simulation*);
+        StoreSim(ABSSim*);
         void execute();
 };
 

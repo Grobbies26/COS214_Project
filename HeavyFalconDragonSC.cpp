@@ -5,6 +5,14 @@
 
 using namespace std;
 
+HeavyFalconDragonSC::HeavyFalconDragonSC(){
+
+}
+
+HeavyFalconDragonSC::~HeavyFalconDragonSC(){
+    
+}
+
 Rocket* HeavyFalconDragonSC::createRocket(){
     return new HeavyFalcon();
 }

@@ -19,6 +19,8 @@ class Node : public Stars
         void setState(string);
         void statusChanged(ABSLaser*);
         void LaserCommunication(string);
+        void add(Stars* s){}
+        void remove(){}
     private:
         Stars* next;
         string status;

@@ -22,19 +22,7 @@ Simulation :: Simulation()
 }
     
 Simulation::~Simulation(){
-    if (state != nullptr){
-        delete state;
-    }
-    if (strategy != nullptr){
-        delete strategy;
-    }
-    if (ship != nullptr){
-        delete ship;
-    }
-    for(int i = 0; i < 4; i++){
-        delete list[i];
-    }
-    delete [] list;
+    
 }
    
 void Simulation :: runSim(){ 
@@ -45,88 +33,6 @@ void Simulation :: runSim(){
         list[1]->press();
     }
 
-    bool happy = false;
-    bool done = false;
-    string r = "";
-    while(tmode == true && done == false){
-        while (happy == false){
-            alterRocket();
-            cout << "Would you like to change something(Y/N): ";
-            cin >> r;
-            if(r == "Y"){
-                happy = false;
-            }
-            else if(r == "N"){
-                happy = true;
-            }
-            else{
-                cout << endl << "Invalid input" << endl;
-            }
-        }
-
-        happy = false;
-        while (happy == false){
-            testRocket(ship->getRocket());
-            cout << "Would you like to re-test the rocket(Y/N): ";
-            cin >> r;
-            if(r == "Y"){
-                happy = false;
-            }
-            else if(r == "N"){
-                happy = true;
-            }
-            else{
-                cout << endl << "Invalid input" << endl;
-            }
-        }
-
-        ship->attachPayload();
-
-        state->setMemento(createSimBackup(strategy,ship,tmode));
-        bool valid = false;
-        r = "";
-        while (valid == false){
-            strategy->run(ship->getShip());
-            cout << "Did an error occur in the launch procedure(Y,N): ";
-            cin >> r;
-            if(r == "Y"){
-                valid = false;
-                SimBackup* backup = state->getMemento();
-                ship = backup->getShip();
-                strategy = backup->getMode();
-                tmode = backup->getTMode();
-            }
-            else if(r == "N"){
-                valid = true;
-            }
-            else{
-                cout << endl << "Invalid input" << endl;
-            }
-        }     
-        ship->getShip()->decommission();
-        bool valid = false;
-        r = "";
-        while (valid == false){
-            cout << "Are you prepared to run a real simulation (Y,N): ";
-            cin >> r;
-            if(r == "Y"){
-                valid = true;
-                done = true;
-            }
-            else if(r == "N"){
-                valid = true;
-            }
-            else{
-                cout << endl << "Invalid input" << endl;
-            }
-        }
-    }
-
-    testRocket(ship->getRocket());
-    ship->attachPayload();
-    state->setMemento(createSimBackup(strategy,ship,tmode));
-    strategy->run(ship->getShip());
-    ship->getShip()->decommission();
 
     cout << "Simulation completed successfully" << endl;
 }   
@@ -171,18 +77,19 @@ void Simulation::newShip(){
         }
     }
 
+    int n = 2;
     valid = false;
     while (valid == false && m != 1)
     {
         cout<<"Please select the rocket type: \n\t1: Heavy Falcon \n\t2: Falcon 9 "<<endl;
         cout<<"Enter 1,2: ";
         
-        cin >> m;
-        if(m == 1){
+        cin >> n;
+        if(n == 1){
             heavy = true;
             valid = true;
         } 
-        else if(m == 2){
+        else if(n == 2){
             heavy = false;
             valid = true;
         }
@@ -191,7 +98,7 @@ void Simulation::newShip(){
         }
     }
 
-    ship->createShip(heavy,m);
+    ship->createShip(heavy,n);
 
     this->setShip(ship);
 }
@@ -229,7 +136,7 @@ void Simulation::setButtons(){
     list[3] = new Button(new Launch(this));
 }
 
-void tm(){
+void Simulation::tm(){
     bool happy = false;
     bool done = false;
     string r = "";
@@ -289,7 +196,7 @@ void tm(){
             }
         }     
         ship->getShip()->decommission();
-        bool valid = false;
+        valid = false;
         r = "";
         while (valid == false){
             cout << "Are you prepared to run a real simulation (Y,N): ";
@@ -297,6 +204,7 @@ void tm(){
             if(r == "Y"){
                 valid = true;
                 done = true;
+                
             }
             else if(r == "N"){
                 valid = true;
@@ -309,9 +217,13 @@ void tm(){
     list[1]->press();
 }
 
-void nm(){
+void Simulation::nm(){
     testRocket(ship->getRocket());
-    ship->attachPayload();
+    
+    if(!tmode){
+        ship->attachPayload();
+    }
+    
     list[2]->press();
     list[3]->press();
     ship->getShip()->decommission();
@@ -320,7 +232,7 @@ void nm(){
 }
 
 Mode* Simulation::getStrat(){
-    return mode;
+    return strategy;
 }
 
 SimStore* Simulation::getBack(){

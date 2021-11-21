@@ -5,6 +5,8 @@
 
 DragonSC::DragonSC(): Payload( "DragonSC" ){}
 
+DragonSC::~DragonSC(){}
+
 void DragonSC::handleRequest(Rocket* r){
     if(r->getPayloadType() == "DragonSC"){
         cout << "DragonSC has arrived at the space station." << endl;

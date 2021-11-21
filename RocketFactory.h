@@ -7,8 +7,8 @@ using namespace std;
 class RocketFactory
 {
 public:
-    RocketFactory(){}
-    virtual ~RocketFactory(){}
+    RocketFactory();
+    virtual ~RocketFactory();
     virtual Rocket* createRocket() = 0;
     virtual Rocket* createPayload() = 0;
 };

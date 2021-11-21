@@ -1,8 +1,14 @@
-prjct.out: main.o BMode.o Builder.o Button.o Command.o Crewdragon.o Decommissioned.o Dragonsc.o Falcon9.o Falcon9core.o Falcon9CrewDragon.o Falcon9DragonSC.o Falcon9Starlink.o Heavyfalcon.o HeavyFalconCrewDragon.o HeavyFalconDragonSC.o InUse.o Laser.o Launch.o Links.o Merlinengine.o NMode.o Node.o Normalmode.o Payload.o ReadyToTest.o ReadyToUse.o Refurbishing.o Rocket.o SatelliteIterator.o Ship.o SimBackup.o SimStateInfo.o SimStore.o Simulation.o Singlevacuummerlin.o SpaceXUser.o Starlink.o State.o Storesim.o Testing.o Testmode.o TMode.o
-	g++ main.o BMode.o Builder.o Button.o Command.o Crewdragon.o Decommissioned.o Dragonsc.o Falcon9.o Falcon9core.o Falcon9CrewDragon.o Falcon9DragonSC.o Falcon9Starlink.o Heavyfalcon.o HeavyFalconCrewDragon.o HeavyFalconDragonSC.o InUse.o Laser.o Launch.o Links.o Merlinengine.o NMode.o Node.o Normalmode.o Payload.o ReadyToTest.o ReadyToUse.o Refurbishing.o Rocket.o SatelliteIterator.o Ship.o SimBackup.o SimStateInfo.o SimStore.o Simulation.o Singlevacuummerlin.o SpaceXUser.o Starlink.o State.o Storesim.o Testing.o Testmode.o TMode.o -o prjct.out
+prjct.out: main.o ABSSim.o ABSLaser.o BMode.o Builder.o Button.o Command.o Crewdragon.o Decommissioned.o Dragonsc.o Falcon9.o Falcon9core.o Falcon9CrewDragon.o Falcon9DragonSC.o Falcon9Starlink.o Heavyfalcon.o HeavyFalconCrewDragon.o HeavyFalconDragonSC.o InUse.o Laser.o Launch.o Links.o Merlinengine.o Mode.o NMode.o Node.o Normalmode.o Payload.o RocketFactory.o ReadyToTest.o ReadyToUse.o Refurbishing.o Rocket.o SatelliteIterator.o Ship.o SimBackup.o SimStateInfo.o SimStore.o Simulation.o Singlevacuummerlin.o SpaceXUser.o Starlink.o State.o Storesim.o Testing.o Testmode.o TMode.o
+	g++ main.o ABSSim.o ABSLaser.o BMode.o Builder.o Button.o Command.o Crewdragon.o Decommissioned.o Dragonsc.o Falcon9.o Falcon9core.o Falcon9CrewDragon.o Falcon9DragonSC.o Falcon9Starlink.o Heavyfalcon.o HeavyFalconCrewDragon.o HeavyFalconDragonSC.o InUse.o Laser.o Launch.o Links.o Merlinengine.o Mode.o NMode.o Node.o Normalmode.o Payload.o RocketFactory.o ReadyToTest.o ReadyToUse.o Refurbishing.o Rocket.o SatelliteIterator.o Ship.o SimBackup.o SimStateInfo.o SimStore.o Simulation.o Singlevacuummerlin.o SpaceXUser.o Starlink.o State.o Storesim.o Testing.o Testmode.o TMode.o -o prjct.out
 
 main.o: main.cpp
 	g++ -c main.cpp
+
+ABSSim.o: ABSSim.cpp
+	g++ -c ABSSim.cpp
+
+ABSLaser.o: ABSLaser.cpp
+	g++ -c ABSLaser.cpp
 
 BMode.o: BMode.cpp
 	g++ -c BMode.cpp
@@ -64,6 +70,9 @@ Links.o: Links.cpp
 Merlinengine.o: Merlinengine.cpp
 	g++ -c Merlinengine.cpp
 
+Mode.o: Mode.cpp
+	g++ -c Mode.cpp
+
 NMode.o: NMode.cpp
 	g++ -c NMode.cpp
 
@@ -75,6 +84,9 @@ Normalmode.o: Normalmode.cpp
 
 Payload.o: Payload.cpp
 	g++ -c Payload.cpp
+
+RocketFactory.o: RocketFactory.cpp
+	g++ -c RocketFactory.cpp
 
 ReadyToTest.o: ReadyToTest.cpp
 	g++ -c ReadyToTest.cpp

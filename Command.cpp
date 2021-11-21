@@ -3,7 +3,7 @@
 
 #include "Command.h"
 
-Command::Command(Simulation* s){
+Command::Command(ABSSim* s){
     sim = s;
 }
 

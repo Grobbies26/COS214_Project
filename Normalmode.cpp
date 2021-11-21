@@ -3,7 +3,7 @@
 
 #include "Normalmode.h"
 
-NormalMode::NormalMode(Simulation* s):Command(s){
+NormalMode::NormalMode(ABSSim* s):Command(s){
 
 }
 

@@ -6,13 +6,13 @@
 #include "SimBackup.h"
 #include "SimStore.h"
 #include "Button.h"
+#include "ABSSim.h"
 
-class Simulation{
+class Simulation:public ABSSim{
     public:
         Simulation();
         ~Simulation();
         SimBackup* createSimBackup(Mode*,Ship*,bool);
-        void restore(SimBackup*);
         void runSim();
         void setMode(Mode*);
         void setShip(Ship*);
@@ -28,12 +28,6 @@ class Simulation{
         void setBack(SimBackup*);
         bool getTmode();
         Ship* getShip();
-    private:
-        SimStore* state;
-        Mode* strategy;
-        Ship* ship;
-        bool tmode;
-        Button** list;
 };
 
 #endif
