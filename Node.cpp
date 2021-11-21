@@ -29,10 +29,8 @@ string Node::getState(){
 }
 
 void Node::sendRadioSignal(){
-    cout<<"called observer 1 "<<endl;
    vector<SpaceXObserver*>::iterator it = SXUserlist.begin();
     for (it = SXUserlist.begin(); it != SXUserlist.end(); ++it){
-        cout<<"called observer "<<endl;
         (*it)->update();
 
     }

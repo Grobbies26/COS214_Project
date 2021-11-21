@@ -17,7 +17,7 @@ public:
   virtual void setState(string s){}
   virtual string getState(){return "";}
   virtual void statusChanged(ABSLaser*){}
-  void attachUser(SpaceXObserver*){}
+  virtual void attachUser(SpaceXObserver* sxu){}
 
   virtual void LaserCommunication(string s){}
   virtual void sendRadioSignal(){}   
