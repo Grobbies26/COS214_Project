@@ -24,15 +24,11 @@ void Builder::createShip(bool heavy,int pay){
     if (heavy == true){
         switch (pay)
         {
-        case 2:
-            cout << "1" << endl;
+        case 1:
             RF = new HeavyFalconCrewDragon();
-            cout << "1" << endl;
             break;
-        case 3:
-            cout << "2" << endl;
+        case 2:
             RF = new HeavyFalconDragonSC();
-            cout << "2" << endl;
             break;
         }
     }
@@ -51,10 +47,8 @@ void Builder::createShip(bool heavy,int pay){
         }
     }
 
-    cout << "1" << endl;
     rocket = RF->createRocket();
     payload = RF->createPayload();
-    cout << "1" << endl;
     setRocket(rocket);
     setPayload(payload);
     cout << "1" << endl;

@@ -6,7 +6,6 @@
 using namespace std;
 
 HeavyFalconCrewDragon::HeavyFalconCrewDragon(){
-    cout << "b" << endl;
 }
 
 HeavyFalconCrewDragon::~HeavyFalconCrewDragon(){

@@ -26,6 +26,7 @@ Simulation::~Simulation(){
 }
    
 void Simulation :: runSim(){ 
+    setButtons();
     if(tmode == true){
         list[0]->press();
     }
@@ -46,11 +47,11 @@ void Simulation::setMode(Mode* mode){
     strategy = mode;
 }
 
-void Simulation::setShip(Ship* ship){
+void Simulation::setShip(Ship* s){
     if(ship != nullptr){
         delete ship;
     }
-    this->ship = ship;
+    this->ship = s;
 }
 
 void Simulation::isTMode(){
