@@ -24,10 +24,10 @@ void Builder::createShip(bool heavy,int pay){
     if (heavy == true){
         switch (pay)
         {
-        case 1:
+        case 2:
             RF = new HeavyFalconCrewDragon();
             break;
-        case 2:
+        case 3:
             RF = new HeavyFalconDragonSC();
             break;
         }

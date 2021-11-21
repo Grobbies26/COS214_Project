@@ -96,7 +96,7 @@ void Simulation::newShip(){
         }
     }
 
-    ship->createShip(heavy,n);
+    ship->createShip(heavy,m);
 
     this->setShip(ship);
 }

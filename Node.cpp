@@ -6,14 +6,10 @@
 
 Node::Node(){
     status = "operational";  // states are operational, unstable, critical
-    SXUserlist = new SpaceXObserver*[3];
 }
 
 Node::~Node(){
-    for(int i = 0; i < 3;i++){
-        delete SXUserlist[i];
-    }
-    delete [] SXUserlist;
+    
 }
 
 void Node::setNext(Stars* s){
@@ -24,8 +20,8 @@ Stars* Node::getNext(){
     return next;
 }
 
-void Node::attachUser(SpaceXObserver* sxu,int i){
-    SXUserlist[i]=sxu;
+void Node::attachUser(SpaceXObserver* sxu){
+    SXUserlist.push_back(sxu);
 }
 
 string Node::getState(){
@@ -33,8 +29,12 @@ string Node::getState(){
 }
 
 void Node::sendRadioSignal(){
-    for(int i = 0;i < 3; i++){
-        SXUserlist[i]->update();
+    cout<<"called observer 1 "<<endl;
+   vector<SpaceXObserver*>::iterator it = SXUserlist.begin();
+    for (it = SXUserlist.begin(); it != SXUserlist.end(); ++it){
+        cout<<"called observer "<<endl;
+        (*it)->update();
+
     }
 }
 

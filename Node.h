@@ -13,7 +13,7 @@ class Node : public Stars
         ~Node();
         void setNext(Stars*);
         Stars* getNext();
-        void attachUser(SpaceXObserver*,int);
+        void attachUser(SpaceXObserver*);
         string getState();
         void sendRadioSignal();        
         void setState(string);
@@ -24,7 +24,7 @@ class Node : public Stars
     private:
         Stars* next;
         string status;
-        SpaceXObserver** SXUserlist;
+        vector<SpaceXObserver*> SXUserlist;
         ABSLaser* laser;
 };
 
